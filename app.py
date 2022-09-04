@@ -1,15 +1,12 @@
 from distutils.log import debug
 from flask import Flask, render_template,request, redirect
+from flask.ext.sqlalchemy import SQLAlchemy
 import psycopg2
 
 app=Flask(__name__,template_folder='template',static_folder='static')
-def connection():
-	s = 'localhost'
-	d = 'iHealth_database' 
-	u = 'postgres' 
-	p = '123'
-	conn = psycopg2.connect(host=s, user=u, password=p, database=d)
-	return conn
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:postgres123@localhost/iHealth_database'
+db=SQLAlchemy(app)
+
 
 @app.route("/")
 def index():
