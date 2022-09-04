@@ -37,9 +37,9 @@ def addmedicine():
 	cursor = conn.cursor()
 	cursor.execute("INSERT INTO MEDICINE (medicine_id, medicine_name VALUES (%s, %s)", (medicine_id, medicine_name))
 	conn.commit()
-    conn.close()
-    return redirect('/')
-    
+        conn.close()
+        return redirect('/medicine')
+
 @app.route('/updatemedicine/<int:medicine_id>', methods = ['GET', 'POST'])
 def updatemedicine(medicine_id):
 	md = []
@@ -56,7 +56,7 @@ def updatemedicine(medicine_id):
 		cursor.execute("UPDATE MEDICINE SET MEDICINE_NAME = %s WHERE MEDICINE_ID = %s", (medicine_name))
  		conn.commit()
 		conn.close()
-		return redirect('/')
+        return redirect('/')
 
 if __name__ == '__main__':
     app.debug=True
