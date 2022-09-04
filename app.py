@@ -15,7 +15,6 @@ def index():
     return render_template("index.html")
 
 @app.route("/medicine")
-
 def medicine():
     medicine = []
     conn = connection()
