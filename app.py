@@ -1,7 +1,7 @@
 from distutils.log import debug
 from flask import Flask, render_template, request
 
-app=Flask(__name__,template_folder='../../template',static_folder='static')
+app=Flask(__name__,template_folder='../template',static_folder='static')
 
 @app.route("/")
 def index():
