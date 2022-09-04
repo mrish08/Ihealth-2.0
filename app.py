@@ -16,14 +16,8 @@ def index():
 
 @app.route("/medicine", methods = ['GET', 'POST'])
 def medicine():
-    medicine = []
-    conn = connection()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM MEDICINE")
-    for row in cursor.fetchall():
-        medicine.append({"medicine_id": row[0], "medicine_name": row[1]})
-    conn.close()	
-    return render_template("medicine.html", medicine = medicine)
+
+    return render_template("medicine.html")
     
 @app.route("/addmedicine", methods = ['GET', 'POST'])
 def addmedicine():
