@@ -14,7 +14,7 @@ def connection():
 def index():
     return render_template("index.html")
 
-@app.route("/medicine")
+@app.route("/medicine", methods = ['GET', 'POST'])
 def medicine():
     medicine = []
     conn = connection()
