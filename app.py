@@ -21,7 +21,7 @@ def index():
 @app.route("/medicine")
 def medicine():
 	medicine = []
-	conn = connect()
+	conn = connection()
 	cursor = conn.cursor()
 	cursor.execute("SELECT * FROM MEDICINE")
 	for row in cursor.fetchall():
