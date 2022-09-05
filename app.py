@@ -5,11 +5,12 @@ import os
 import psycopg2
 
 app=Flask(__name__,template_folder='template',static_folder='static')
-def get_db_connection():
-    conn = psycopg2.connect(host='localhost',
-                            database='ihealth_database',
-                            user=os.environ['postgres'],
-                            password=os.environ['123'])
+def connection():
+    s = 'localhost'
+    d = 'IHEALTH_DATABASE' 
+    u = 'postgres' 
+    p = '123'
+    conn = psycopg2.connect(host=s, user=u, password=p, database=d)
     return conn
 
 @app.route("/")
