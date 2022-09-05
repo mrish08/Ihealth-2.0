@@ -30,7 +30,7 @@ def vaccination():
 	return render_template("vaccination.html")
 
 @app.route("/schedule")
-def clinic():
+def schedule():
 	return render_template("schedule.html")
 
 @app.route("/medicine")
