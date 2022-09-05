@@ -1,10 +1,10 @@
-<<<<<<< HEAD:Ihealth 2.0/iHealth/admin/edit-medicine.html
+<<<<<<< HEAD:Ihealth 2.0/iHealth/admin/clinic.html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Edit Medicine| iHealth</title>
+    <title>Clinic Services| iHealth</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
@@ -64,8 +64,6 @@
                     <a href="clinic.html" class="side-nav-link">
 
                         <i class="uil-clipboard-alt"></i>
-
-
                         <span> Clinic Service </span>
                     </a>
                 </li>
@@ -75,10 +73,6 @@
                     <a href="medicine.html" class="side-nav-link">
                         <i class="uil-home-alt"></i>
                         <span>Medicine Pick-up</span>
-
-
-
-                    </a>
                 </li>
             </ul>
 
@@ -91,12 +85,12 @@
     <!-- ============================================================== -->
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
-
 =======
 <?php include 'sidebar.html';
 ?>
 <div class="wrapper">
->>>>>>> 2ea56dc0c4f3828d3b7bcb32a25ec72b26bbe46b:Ihealth 2.0/iHealth/admin/edit-medicine.html
+>>>>>>> 2ea56dc0c4f3828d3b7bcb32a25ec72b26bbe46b:Ihealth 2.0/iHealth/admin/clinic.html
+
     <div class="content-page">
         <div class="content">
             <!-- Topbar Start -->
@@ -283,12 +277,10 @@
             <div class="container-fluid">
 
                 <!-- start page title -->
-
-                <!-- start page title -->
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
-                            <h4 class="page-title">Edit Medicine Information</h4>
+                            <h4 class="page-title">Clinic Services</h4>
                         </div>
                     </div>
 
@@ -301,87 +293,145 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
-                                <div class="tab-content">
+                                <div class="card-body">
+                                    <div class="tab-content">
+
+                                        <div class="tab-pane show active" id="buttons-table-patients" class="table responsive nowrap w-100" data-toggle="lists" data-lists-values='["js-lists-values-user-time", "js-lists-values-user-schedname"]'>
+                                            <table id="table table-centered" class="table-responsive mb-0">
+
+                                                <table id="" class="table dt-responsive nowrap w-100">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width: 510px;">
+                                                                <a href="javascript:void(0)" class="sort" data-sort="js-lists-values-user-schedname">Clinic Service
+                                                                    Name</a>
+                                                            </th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody class="list" id="staff02">
+                                                        <tr>
+                                                            <td class="table-action">
+                                                                <form class="action-icon">
+                                                                    <a href="edit-clinic.html">
+                                                                        <button type="button" class="btn btn-warning">
+                                                                            <i class="mdi mdi-account-edit-outline"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </table>
+                                        </div>
+                                        <!-- end patients-->
 
 
-                                    <div class="card-body">
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <label for="simpleinput" class="form-label">Medicine
-                                                        Name:&nbsp;<span style="color:#ff0000">*</span></label>
-                                                    <input type="text" id="schedulename" class="form-control">
-                                                    </span>
-                                                </td>
-                                                <br>
-                                                <td>
-                                                    <a href="medicine.html">
-                                                        <button class="btn btn-secondary" type="submit">Cancel</button>
-                                                    </a>
+                                        <div class="card">
 
-                                                    <a href="">
-                                                        <button class="btn btn-primary" type="submit">Save
-                                                            Changes</button>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
+
+                                        </div>
+                                        <!-- end card body-->
+                                    </div>
+                                    <!-- end card -->
+                                </div>
+                                <!-- end col-->
+
+
+
+                            </div>
+                            <!-- end row-->
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="page-title-box">
+                                        <h4 class="page-title">Add Service</h4>
                                     </div>
                                 </div>
+
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <thead>
+                                                    <h5></h5><br>
+                                                    <p>Please fill in the details below to successfully add a new Service.
+                                                    </p>
+
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="simpleinput" class="form-label">Service
+                                                                Name:&nbsp;<span style="color:#ff0000">*</span></label>
+                                                                <input type="text" id="schedulename" class="form-control">
+                                                                </span>
+                                                            </td><br>
+                                                            <td>
+                                                                <button class="btn btn-primary" type="submit">Submit</button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </thead>
+                                                </table>
+                                            </div>
+                                            <!-- end col-->
+                                        </div>
+                                        <!-- end row-->
+
+                                    </div>
+                                    <!-- container -->
+
+                                </div>
+                                <!-- content -->
                             </div>
+                            <!-- end row of table content-->
                         </div>
-                        <!-- /Edit Details Modal -->
+                        <!-- container -->
                     </div>
-                    <!-- container -->
+                    <!-- content -->
+
                 </div>
-                <!-- content -->
+
+                <!-- ============================================================== -->
+                <!-- End Page content -->
+                <!-- ============================================================== -->
 
             </div>
-            <!-- end row-->
-        </div>
-        <!-- container -->
-    </div>
-    <!-- content -->
+            <!-- END wrapper -->
 
-    </div>
+            <!-- bundle -->
+            <script src="../../static/js/vendor.min.js"></script>
+            <script src="../../static/js/app.min.js"></script>
 
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
+            <!-- third party js -->
+            <script src="../../static/js/vendor/jquery.dataTables.min.js"></script>
+            <script src="../../static/js/vendor/dataTables.bootstrap5.js"></script>
+            <script src="../../static/js/vendor/dataTables.responsive.min.js"></script>
+            <script src="../../static/js/vendor/responsive.bootstrap5.min.js"></script>
+            <script src="../../static/js/vendor/dataTables.buttons.min.js"></script>
+            <script src="../../static/js/vendor/buttons.bootstrap5.min.js"></script>
+            <script src="../../static/js/vendor/buttons.html5.min.js"></script>
+            <script src="../../static/js/vendor/buttons.flash.min.js"></script>
+            <script src="../../static/js/vendor/buttons.print.min.js"></script>
+            <script src="../../static/js/vendor/dataTables.keyTable.min.js"></script>
+            <script src="../../static/js/vendor/dataTables.select.min.js"></script>
+            <script src="../../static/js/vendor/apexcharts.min.js"></script>
+            <script src="../../static/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+            <script src="../../static/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+            <script src="../../static/js/vendor/dropzone.min.js"></script>
+            <script src="../../static/js/vendor/list.min.js"></script>
+            <!-- third party js ends -->
 
-    </div>
-    <!-- END wrapper -->
-
-    <!-- bundle -->
-    <script src="../../static/js/vendor.min.js"></script>
-    <script src="../../static/js/app.min.js"></script>
-
-    <!-- third party js -->
-    <script src="../../static/js/vendor/jquery.dataTables.min.js"></script>
-    <script src="../../static/js/vendor/dataTables.bootstrap5.js"></script>
-    <script src="../../static/js/vendor/dataTables.responsive.min.js"></script>
-    <script src="../../static/js/vendor/responsive.bootstrap5.min.js"></script>
-    <script src="../../static/js/vendor/dataTables.buttons.min.js"></script>
-    <script src="../../static/js/vendor/buttons.bootstrap5.min.js"></script>
-    <script src="../../static/js/vendor/buttons.html5.min.js"></script>
-    <script src="../../static/js/vendor/buttons.flash.min.js"></script>
-    <script src="../../static/js/vendor/buttons.print.min.js"></script>
-    <script src="../../static/js/vendor/dataTables.keyTable.min.js"></script>
-    <script src="../../static/js/vendor/dataTables.select.min.js"></script>
-    <script src="../../static/js/vendor/apexcharts.min.js"></script>
-    <script src="../../static/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="../../static/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="../../static/js/vendor/dropzone.min.js"></script>
-    <script src="../../static/js/vendor/list.min.js"></script>
-    <!-- third party js ends -->
-
-    <!-- demo app -->
-    <script src="../../static/js/pages/demo.datatable-init.js"></script>
-    <script src="../../static/js/pages/demo.toastr.js"></script>
-    <script src="../../static/js/pages/demo.datatable-init.js"></script>
-    <script src="../../static/js/pages/demo.toastr.js"></script>
-    <script src="../../static/js/pages/list.js"></script>
-    <!-- end demo js-->
+            <!-- demo app -->
+            <script src="../../static/js/pages/demo.datatable-init.js"></script>
+            <script src="../../static/js/pages/demo.toastr.js"></script>
+            <script src="../../static/js/pages/demo.datatable-init.js"></script>
+            <script src="../../static/js/pages/demo.toastr.js"></script>
+            <script src="../../static/js/pages/list.js"></script>
+            <!-- end demo js-->
 </body>
 
 </html>
