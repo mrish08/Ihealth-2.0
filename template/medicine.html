@@ -1,6 +1,92 @@
-{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block body %}
+<head>
+    <meta charset="utf-8">
+    <title>Medicine Info| iHealth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
+    <meta content="Coderthemes" name="author">
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../../static/images/brgyms-icon-white.png">
+
+    <!-- third party css -->
+    <link href="../../static/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
+    <!-- third party css end -->
+
+    <!-- App css -->
+    <link href="../../static/css/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="../../static/css/app-i.min.css" rel="stylesheet" type="text/css" id="light-style">
+    <link href="../../static/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
+
+</head>
+
+<body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+    <!-- Begin page -->
+    <div class="wrapper">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="leftside-menu">
+
+            <!-- LOGO -->
+            <a href="admin-index.html" class="logo text-center logo-light">
+                <span class="logo-lg">
+                    <img src="../../static/images/ihealth-logo-with-text.png" alt="" height="40">
+                </span>
+            </a>
+
+            <ul class="side-nav">
+
+                <li class="side-nav-title side-nav-item">Menu</li>
+
+                <li class="side-nav-item">
+                    <a href="index.html" class="side-nav-link">
+                        <i class="uil-chart-pie"></i>
+                        <span> Dashboard </span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="schedule.html" class="side-nav-link">
+                        <i class="uil-clipboard-alt"></i>
+                        <span> Schedule </span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="vaccination.html" class="side-nav-link">
+                        <i class="uil-syringe"></i>
+                        <span> Vaccination Service</span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="clinic.html" class="side-nav-link">
+                        <i class="uil-clipboard-alt"></i>
+                        <span> Clinic Service </span>
+                    </a>
+                </li>
+
+
+                <li class="side-nav-item">
+
+                    <a href="medicine.html" class="side-nav-link">
+                        <i class="uil-home-alt"></i>
+                        <span>Medicine Pick-up</span>
+
+
+                </li>
+            </ul>
+
+        </div>
+        <!-- Sidebar -left -->
+
+    </div>
+    <!-- Left Sidebar End -->
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
     <div class="content-page">
         <div class="content">
             <!-- Topbar Start -->
@@ -304,7 +390,449 @@
                             <!-- end row of table content-->
 
 
-                                                       <!-- /.modal -->
+                            <!--MODALS-->
+
+                            <!-- Edit Patient Modal -->
+                            <div id="edit-patient-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="warning-header-modalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header modal-colored-header bg-primary">
+                                            <h4 class="modal-title" id="warning-header-modalLabel">Edit Patient Details
+                                            </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <label for="firstname" class="form-label">First Name</label>
+                                                            <input type="text" class="form-control" id="resident_fname" placeholder="Enter first name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Middle Name</label>
+                                                            <input type="text" class="form-control" id="resident_mname" placeholder="Enter middle name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Last Name</label>
+                                                            <input type="text" class="form-control" id="resident_lname" placeholder="Enter last name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Suffix</label>
+                                                            <input type="text" class="form-control" id="resident_suffix" placeholder="Suffix">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Birthday</label>
+                                                            <input type="date" class="form-control" id="resident_bday" placeholder="Enter birthday">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Phone No.</label>
+                                                            <input type="number" class="form-control" id="resident_phone" placeholder="Enter phone no.">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Username</label>
+                                                            <input type="text" class="form-control" id="resident_username" placeholder="Enter username">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label for="useremail" class="form-label">Email
+                                                                Address</label>
+                                                            <input type="email" class="form-control" id="resident_emailadd" placeholder="Enter email">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label for="userpassword" class="form-label">Password</label>
+                                                            <input type="password" class="form-control" id="resident_pass" placeholder="Enter password">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Address</label>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <input type="text" class="form-control" id="resident_street" placeholder="House No./Street">
+                                                                </div>
+                                                                <div class="col">
+                                                                    <select class="form-select" id="example-select">
+                                                                        <option>Purok Katakutan</option>
+                                                                        <option>Purok Kakirutan</option>
+                                                                        <option>Purok Kalanturan</option>
+                                                                        <option>Purok Kakurian</option>
+                                                                        <option>Purok Karasyahan</option>
+                                                                        <option>Purok Kakuriputan</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="text" class="form-control" id="resident_barangay" placeholder="Barangay" value="Brgy. BITBo" disabled>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Educational
+                                                                Attainment</label>
+                                                            <select class="form-select" id="resident_educ">
+                                                                <option>No schooling completed</option>
+                                                                <option>Elementary</option>
+                                                                <option>High School Undergrad</option>
+                                                                <option>High School Graduate</option>
+                                                                <option>College Undergad</option>
+                                                                <option>Vocational</option>
+                                                                <option>Bachelor's Degree</option>
+                                                                <option>Master's Degree</option>
+                                                                <option>Doctorate Degree</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Gender</label>
+                                                            <select class="form-select" id="resident_gender">
+                                                                <option>Male</option>
+                                                                <option>Female</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Blood Type</label>
+                                                            <select class="form-select" id="resident_bloodtype">
+                                                                <option>Unknown</option>
+                                                                <option>O+</option>
+                                                                <option>O-</option>
+                                                                <option>A+</option>
+                                                                <option>A-</option>
+                                                                <option>B+</option>
+                                                                <option>B-</option>
+                                                                <option>AB+</option>
+                                                                <option>AB-</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Civil
+                                                                Status</label>
+                                                            <select class="form-select" id="resident_civilstat">
+                                                                <option>Single</option>
+                                                                <option>Married</option>
+                                                                <option>Separated</option>
+                                                                <option>Divorced</option>
+                                                                <option>Widowed</option>
+                                                                <option>Single Parent</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Condition
+                                                                Status</label>
+                                                            <select class="form-select" id="resident_condition">
+                                                                <option>None</option>
+                                                                <option>Senior Citizen</option>
+                                                                <option>PWD</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <label for="userpassword" class="form-label">Occupation</label>
+                                                            <input type="text" class="form-control" id="resident_occupation" placeholder="Occupation">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <div class="mb-3">
+                                                                <label for="userpassword" class="form-label">Religion</label>
+                                                                <input type="text" class="form-control" id="resident_religion" placeholder="Religion">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">House Ownership
+                                                                Status</label>
+                                                            <select class="form-select" id="resident_howner">
+                                                                <option>Owned</option>
+                                                                <option>Rent</option>
+                                                                <option>Living with Parents</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label for="useremail" class="form-label">Profile
+                                                                Picture</label>
+                                                            <input type="file" class="form-control" id="resident_profile_pic" placeholder="Upload Photo">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="toastr-updatepatient">Save
+                                                changes</button>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal -->
+
+                            <!-- Edit Senior Modal -->
+                            <div id="edit-senior-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="warning-header-modalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header modal-colored-header bg-primary">
+                                            <h4 class="modal-title" id="warning-header-modalLabel">Edit Senior Citizen Details
+                                            </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <label for="firstname" class="form-label">First Name</label>
+                                                            <input type="text" class="form-control" id="resident_fname" placeholder="Enter first name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Middle Name</label>
+                                                            <input type="text" class="form-control" id="resident_mname" placeholder="Enter middle name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Last Name</label>
+                                                            <input type="text" class="form-control" id="resident_lname" placeholder="Enter last name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Suffix</label>
+                                                            <input type="text" class="form-control" id="resident_suffix" placeholder="Suffix">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Birthday</label>
+                                                            <input type="date" class="form-control" id="resident_bday" placeholder="Enter birthday">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Phone No.</label>
+                                                            <input type="number" class="form-control" id="resident_phone" placeholder="Enter phone no.">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Username</label>
+                                                            <input type="text" class="form-control" id="resident_username" placeholder="Enter username">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label for="useremail" class="form-label">Email
+                                                                Address</label>
+                                                            <input type="email" class="form-control" id="resident_emailadd" placeholder="Enter email">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label for="userpassword" class="form-label">Password</label>
+                                                            <input type="password" class="form-control" id="resident_pass" placeholder="Enter password">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Address</label>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <input type="text" class="form-control" id="resident_street" placeholder="House No./Street">
+                                                                </div>
+                                                                <div class="col">
+                                                                    <select class="form-select" id="example-select">
+                                                                        <option>Purok Katakutan</option>
+                                                                        <option>Purok Kakirutan</option>
+                                                                        <option>Purok Kalanturan</option>
+                                                                        <option>Purok Kakurian</option>
+                                                                        <option>Purok Karasyahan</option>
+                                                                        <option>Purok Kakuriputan</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col">
+                                                                    <input type="text" class="form-control" id="resident_barangay" placeholder="Barangay" value="Brgy. BITBo" disabled>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Educational
+                                                                Attainment</label>
+                                                            <select class="form-select" id="resident_educ">
+                                                                <option>No schooling completed</option>
+                                                                <option>Elementary</option>
+                                                                <option>High School Undergrad</option>
+                                                                <option>High School Graduate</option>
+                                                                <option>College Undergad</option>
+                                                                <option>Vocational</option>
+                                                                <option>Bachelor's Degree</option>
+                                                                <option>Master's Degree</option>
+                                                                <option>Doctorate Degree</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Gender</label>
+                                                            <select class="form-select" id="resident_gender">
+                                                                <option>Male</option>
+                                                                <option>Female</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Blood Type</label>
+                                                            <select class="form-select" id="resident_bloodtype">
+                                                                <option>Unknown</option>
+                                                                <option>O+</option>
+                                                                <option>O-</option>
+                                                                <option>A+</option>
+                                                                <option>A-</option>
+                                                                <option>B+</option>
+                                                                <option>B-</option>
+                                                                <option>AB+</option>
+                                                                <option>AB-</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Civil
+                                                                Status</label>
+                                                            <select class="form-select" id="resident_civilstat">
+                                                                <option>Single</option>
+                                                                <option>Married</option>
+                                                                <option>Separated</option>
+                                                                <option>Divorced</option>
+                                                                <option>Widowed</option>
+                                                                <option>Single Parent</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">Condition
+                                                                Status</label>
+                                                            <select class="form-select" id="resident_condition">
+                                                                <option>None</option>
+                                                                <option>Senior Citizen</option>
+                                                                <option>PWD</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <label for="userpassword" class="form-label">Occupation</label>
+                                                            <input type="text" class="form-control" id="resident_occupation" placeholder="Occupation">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <div class="mb-3">
+                                                                <label for="userpassword" class="form-label">Religion</label>
+                                                                <input type="text" class="form-control" id="resident_religion" placeholder="Religion">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="mb-3">
+                                                            <label for="lastname" class="form-label">House Ownership
+                                                                Status</label>
+                                                            <select class="form-select" id="resident_howner">
+                                                                <option>Owned</option>
+                                                                <option>Rent</option>
+                                                                <option>Living with Parents</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="mb-3">
+                                                            <label for="useremail" class="form-label">Profile
+                                                                Picture</label>
+                                                            <input type="file" class="form-control" id="resident_profile_pic" placeholder="Upload Photo">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="toastr-updatesenior">Save
+                                                changes</button>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal -->
                         </div>
                         <!-- container -->
                     </div>
@@ -319,4 +847,36 @@
             </div>
             <!-- END wrapper -->
 
-{% endblock %}
+            <!-- bundle -->
+            <script src="../../static/js/vendor.min.js"></script>
+            <script src="../../static/js/app.min.js"></script>
+
+            <!-- third party js -->
+            <script src="../../static/js/vendor/jquery.dataTables.min.js"></script>
+            <script src="../../static/js/vendor/dataTables.bootstrap5.js"></script>
+            <script src="../../static/js/vendor/dataTables.responsive.min.js"></script>
+            <script src="../../static/js/vendor/responsive.bootstrap5.min.js"></script>
+            <script src="../../static/js/vendor/dataTables.buttons.min.js"></script>
+            <script src="../../static/js/vendor/buttons.bootstrap5.min.js"></script>
+            <script src="../../static/js/vendor/buttons.html5.min.js"></script>
+            <script src="../../static/js/vendor/buttons.flash.min.js"></script>
+            <script src="../../static/js/vendor/buttons.print.min.js"></script>
+            <script src="../../static/js/vendor/dataTables.keyTable.min.js"></script>
+            <script src="../../static/js/vendor/dataTables.select.min.js"></script>
+            <script src="../../static/js/vendor/apexcharts.min.js"></script>
+            <script src="../../static/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+            <script src="../../static/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+            <script src="../../static/js/vendor/dropzone.min.js"></script>
+            <script src="../../static/js/vendor/list.min.js"></script>
+            <!-- third party js ends -->
+
+            <!-- demo app -->
+            <script src="../../static/js/pages/demo.datatable-init.js"></script>
+            <script src="../../static/js/pages/demo.toastr.js"></script>
+            <script src="../../static/js/pages/demo.datatable-init.js"></script>
+            <script src="../../static/js/pages/demo.toastr.js"></script>
+            <script src="../../static/js/pages/list.js"></script>
+            <!-- end demo js-->
+</body>
+
+</html>
