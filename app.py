@@ -61,6 +61,22 @@ def updatemedicine(medicine_id):
 		conn.close()
 		return redirect('/')
 
+@app.route("/clinic")
+def clinic():
+	return render_template("clinic.html")
+
+@app.route("/dental")
+def dental():
+	return render_template("dental.html")
+
+@app.route("/vaccination")
+def vaccination():
+	return render_template("vaccination.html")
+
+@app.route("/schedule")
+def clinic():
+	return render_template("schedule.html")
+
 if __name__ == '__main__':
 	app.debug=True
 	app.run(debug=True)
