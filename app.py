@@ -1,4 +1,5 @@
 from distutils.log import debug
+from sqlite3 import connect
 from flask import Flask, render_template,request, redirect,flash, url_for, session, logging
 import os
 import psycopg2
@@ -19,7 +20,7 @@ def index():
 @app.route("/medicine")
 def medicine():
 	medicine = []
-	conn = connection()
+	conn = connect()
 	cursor = conn.cursor()
 	cursor.execute("SELECT * FROM MEDICINE")
 	for row in cursor.fetchall():
