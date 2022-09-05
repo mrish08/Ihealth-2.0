@@ -18,11 +18,74 @@
     <link href="../../static/css/icons.min.css" rel="stylesheet" type="text/css">
     <link href="../../static/css/app-i.min.css" rel="stylesheet" type="text/css" id="light-style">
     <link href="../../static/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
-  
+
 </head>
 
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
-<div include-html="sidebar.html"></div>
+    <!-- Begin page -->
+    <header>
+    <div class="wrapper">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="leftside-menu">
+
+            <!-- LOGO -->
+            <a href="{{ url_for('index') }}" class="logo text-center logo-light">
+                <span class="logo-lg">
+                    <img src="../../static/images/ihealth-logo-with-text.png" alt="" height="40">
+                </span>
+            </a>
+
+            <ul class="side-nav">
+
+                <li class="side-nav-title side-nav-item">Menu</li>
+
+                <li class="side-nav-item">
+                    <a href="{{ url_for('index') }}" class="side-nav-link">
+                        <i class="uil-chart-pie"></i>
+                        <span> Dashboard </span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="{{ url_for('schedule') }}" class="side-nav-link">
+                        <i class="uil-clipboard-alt"></i>
+                        <span> Schedule </span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="{{ url_for('vaccination') }}" class="side-nav-link">
+                        <i class="uil-syringe"></i>
+                        <span> Vaccination Service</span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+                    <a href="{{ url_for('clinic') }}" class="side-nav-link">
+
+                        <i class="uil-clipboard-alt"></i>
+                        <span> Clinic Service </span>
+                    </a>
+                </li>
+
+                <li class="side-nav-item">
+
+                    <a href="{{ url_for('medicine') }} " class="side-nav-link">
+                        <i class="uil-home-alt"></i>
+                        <span>Medicine Pick-up</span>
+                </li>
+            </ul>
+
+        </div>
+        <!-- Sidebar -left -->
+
+    </div>
+    <!-- Left Sidebar End -->
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+</header>
 
 <div class="wrapper">
 
