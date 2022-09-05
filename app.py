@@ -1,12 +1,15 @@
 from distutils.log import debug
 from flask import Flask, render_template,request, redirect,flash, url_for, session, logging
-from flask.ext.sqlalchemy import SQLAlchemy
+import os
 import psycopg2
 
 app=Flask(__name__,template_folder='template',static_folder='static')
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:postgres123@localhost/iHealth_database'
-db=SQLAlchemy(app)
-
+def get_db_connection():
+    conn = psycopg2.connect(host='localhost',
+                            database='ihealth_database',
+                            user=os.environ['postgres'],
+                            password=os.environ['123'])
+    return conn
 
 @app.route("/")
 def index():
@@ -37,7 +40,7 @@ def addmedicine():
 	conn.commit()
 	conn.close()
 	return redirect('/medicine')
-	
+
 @app.route('/updatemedicine/<int:medicine_id>', methods = ['GET', 'POST'])
 def updatemedicine(medicine_id):
 	md = []
