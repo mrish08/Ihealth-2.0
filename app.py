@@ -6,7 +6,7 @@ import psycopg2
 
 app=Flask(__name__,template_folder='template',static_folder='static')
 def connection():
-   conn = psycopg2.connect(database="iHealth_databas",
+   conn = psycopg2.connect(database="iHealth_database",
                         host="localhost",
                         user="postgres",
                         password="123")
