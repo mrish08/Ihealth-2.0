@@ -49,8 +49,8 @@ def addmedicine():
 		medicine_id = int(request.form["medicine_id"])
 		medicine_name = request.form["medicine_name"]
 	conn = connection()
-	cursor = conn.cursor()
-	cursor.execute("INSERT INTO MEDICINE (medicine_id, medicine_name VALUES (%s, %s)", [medicine_id, medicine_name])
+	cur = conn.cursor()
+	cur.execute("INSERT INTO MEDICINE (medicine_id, medicine_name VALUES (%s, %s)", [medicine_id, medicine_name])
 	conn.commit()
 	conn.close()
 	return redirect('/medicine')
