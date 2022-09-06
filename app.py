@@ -1,5 +1,4 @@
 from distutils.log import debug
-from sqlite3 import connect
 from flask import Flask, render_template,request, redirect,flash, url_for, session, logging
 import os
 import psycopg2
@@ -49,13 +48,12 @@ def medicine():
 	
 @app.route("/addmedicine", methods = ['GET', 'POST'])
 def addmedicine():
-	
 	if request.method == 'POST':
-		medicine_id = int(request.form["medicine_id"])
-		medicine_name = request.form["medicine_name"]
+		medicine_id = int(request.form['medicine_id'])
+		medicine_name = request.form['medicine_name']
 	conn = connection()
 	cursor = conn.cursor()
-	cursor.execute("INSERT INTO MEDICINE (medicine_id, medicine_name VALUES (%s, %s)", (medicine_id, medicine_name))
+	cursor.execute('INSERT INTO medicine (medicine_id, medicine_name)'' VALUES (%s, %s)', (medicine_id, medicine_name))
 	conn.commit()
 	conn.close()
 	return redirect('/medicine')
