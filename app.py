@@ -5,6 +5,7 @@ import os
 import psycopg2
 
 app=Flask(__name__,template_folder='template',static_folder='static')
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:123@localhost/iHealth_database'
 def connection():
     s = 'localhost'
     d = 'iHealth_database' 
@@ -54,13 +55,11 @@ def addmedicine():
 		medicine_name = request.form['medicine_name']
 	conn = connection()
 	cursor = conn.cursor()
-
 	cursor.execute('INSERT INTO medicine (medicine_id, medicine_name)'' VALUES (%s, %s)', (medicine_id, medicine_name))
-	
 	conn.commit()
 	conn.close()
 	return redirect('/medicine')
-	
+
 @app.route('/updatemedicine/<int:medicine_id>', methods = ['GET', 'POST'])
 def updatemedicine(medicine_id):
 	md = []
