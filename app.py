@@ -1,11 +1,9 @@
 from distutils.log import debug
 from flask import Flask, render_template,request, redirect,flash, url_for, session, logging
-from flask_sqlalchemy import SQLAlchemy
 import os
 import psycopg2
 
 app=Flask(__name__,template_folder='template',static_folder='static')
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:123@localhost/iHealth_database'
 def connection():
     s = 'localhost'
     d = 'iHealth_database' 
@@ -51,8 +49,8 @@ def medicine():
 @app.route("/addmedicine", methods = ['GET', 'POST'])
 def addmedicine():
 	if request.method == 'POST':
-		medicine_id = int(request.form["medicine_id"])
-		medicine_name = request.form["medicine_name"]
+		medicine_id = int(request.form['medicine_id'])
+		medicine_name = request.form['medicine_name']
 	conn = connection()
 	cursor = conn.cursor()
 	cursor.execute('INSERT INTO medicine (medicine_id, medicine_name)'' VALUES (%s, %s)', (medicine_id, medicine_name))
