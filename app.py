@@ -3,7 +3,7 @@ from flask import Flask, render_template,request, redirect,flash, url_for, sessi
 import os
 import psycopg2
 
-app=Flask(__name__,template_folder='template',static_folder='static')
+app=Flask(__name__,)
 def connection():
     s = 'localhost'
     d = 'iHealth_database' 
