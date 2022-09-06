@@ -50,7 +50,6 @@ def medicine():
 	
 @app.route("/addmedicine", methods = ['GET', 'POST'])
 def addmedicine():
-	addm= []
 	if request.method == 'POST':
 		medicine_id = int(request.form['medicine_id'])
 		medicine_name = request.form['medicine_name']
@@ -61,8 +60,8 @@ def addmedicine():
 	
 	conn.commit()
 	conn.close()
-	return render_template('medicine.html', addm=addm)
-
+	return redirect('/medicine')
+	p
 @app.route('/updatemedicine/<int:medicine_id>', methods = ['GET', 'POST'])
 def updatemedicine(medicine_id):
 	md = []
