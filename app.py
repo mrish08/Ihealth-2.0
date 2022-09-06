@@ -9,8 +9,7 @@ def connection():
    conn = psycopg2.connect(database="iHealth_databas",
                         host="localhost",
                         user="postgres",
-                        password="123",
-                        port="5000")
+                        password="123")
 @app.route("/")
 def index():
 	return render_template("index.html")
@@ -69,7 +68,7 @@ def updatemedicine(medicine_id):
 		return render_template("medicine.html", medicine = md[0])
 	if request.method == 'POST':
 		name = str(request.form["medicine_name"])
-		cursor.execute("UPDATE MEDICINE SET MEDICINE_NAME = %s WHERE MEDICINE_ID = %s", [medicine_name])
+		cursor.execute("UPDATE MEDICINE SET MEDICINE_NAME = %s WHERE MEDICINE_ID = %s", (medicine_name))
 		conn.commit()
 		conn.close()
 		return redirect('/medicine')
