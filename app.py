@@ -6,13 +6,11 @@ import psycopg2
 
 app=Flask(__name__,template_folder='template',static_folder='static')
 def connection():
-    s = 'localhost'
-    d = 'iHealth_database' 
-    u = 'postgres' 
-    p = '123'
-    conn = psycopg2.connect(host=s, user=u, password=p, database=d)
-    return conn
-
+   conn = psycopg2.connect(database="iHealth_databas",
+                        host="localhost",
+                        user="postgres",
+                        password="123",
+                        port="5000")
 @app.route("/")
 def index():
 	return render_template("index.html")
@@ -38,7 +36,7 @@ def medicine():
 	medicine = []
 	conn = connection()
 	cursor = conn.cursor()
-	cursor.execute("SELECT * FROM MEDICINE")
+	cursor.execute("SELECT * FROM medicine")
 	for row in cursor.fetchall():
 		medicine.append({"medicine_id": row[0], "medicine_name": row[1]})
 	conn.close()	
@@ -53,7 +51,7 @@ def addmedicine():
 		medicine_name = request.form["medicine_name"]
 	conn = connection()
 	cursor = conn.cursor()
-	cursor.execute("INSERT INTO MEDICINE (medicine_id, medicine_name VALUES (%s, %s)", (medicine_id, medicine_name))
+	cursor.execute("INSERT INTO MEDICINE (medicine_id, medicine_name VALUES (%s, %s)", [medicine_id, medicine_name])
 	conn.commit()
 	conn.close()
 	return redirect('/medicine')
@@ -71,7 +69,7 @@ def updatemedicine(medicine_id):
 		return render_template("medicine.html", medicine = md[0])
 	if request.method == 'POST':
 		name = str(request.form["medicine_name"])
-		cursor.execute("UPDATE MEDICINE SET MEDICINE_NAME = %s WHERE MEDICINE_ID = %s", (medicine_name))
+		cursor.execute("UPDATE MEDICINE SET MEDICINE_NAME = %s WHERE MEDICINE_ID = %s", [medicine_name])
 		conn.commit()
 		conn.close()
 		return redirect('/medicine')
