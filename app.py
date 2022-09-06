@@ -50,15 +50,18 @@ def medicine():
 	
 @app.route("/addmedicine", methods = ['GET', 'POST'])
 def addmedicine():
+	form = addmedicine(request.form)
 	if request.method == 'POST':
-	
+		medicine_id = int(request.form['medicine_id'])
 		medicine_name = request.form['medicine_name']
 	conn = connection()
 	cursor = conn.cursor()
-	cursor.execute('INSERT INTO medicine (medicine_name)'' VALUES %s', (medicine_name))
+
+	cursor.execute('INSERT INTO medicine (medicine_id, medicine_name)'' VALUES (%s, %s)', (medicine_id, medicine_name))
+	
 	conn.commit()
 	conn.close()
-	return redirect('/medicine')
+	return render_template('medicine.html', form=form)
 
 @app.route('/updatemedicine/<int:medicine_id>', methods = ['GET', 'POST'])
 def updatemedicine(medicine_id):
