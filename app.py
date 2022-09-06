@@ -61,7 +61,7 @@ def addmedicine():
 	conn.commit()
 	conn.close()
 	return redirect('/medicine')
-	p
+	
 @app.route('/updatemedicine/<int:medicine_id>', methods = ['GET', 'POST'])
 def updatemedicine(medicine_id):
 	md = []
