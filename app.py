@@ -5,7 +5,6 @@ import os
 import psycopg2
 
 app=Flask(__name__,template_folder='template',static_folder='static')
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:123@localhost/iHealth_database'
 def connection():
     s = 'localhost'
     d = 'iHealth_database' 
