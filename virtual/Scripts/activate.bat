@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\UNIT\Desktop\ihealthv.2\Ihealth 2.0\virtual
+set VIRTUAL_ENV=C:\xampp\htdocs\Ihealth-2.0\virtual
 
 if not defined PROMPT set PROMPT=$P$G
 
