@@ -1,9 +1,11 @@
 from distutils.log import debug
 from flask import Flask, render_template,request, redirect,flash, url_for, session, logging
+from flask_sqlalchemy import SQLAlchemy
 import os
 import psycopg2
 
 app=Flask(__name__,template_folder='template',static_folder='static')
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:123@localhost/iHealth_database'
 def connection():
     s = 'localhost'
     d = 'iHealth_database' 
