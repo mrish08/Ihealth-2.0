@@ -293,7 +293,7 @@
                                         <div class="tab-pane show active" id="buttons-table-patients" class="table responsive nowrap w-100" data-toggle="lists" data-lists-values='["js-lists-values-user-time", "js-lists-values-user-schedname"]'>
                                             <table id="table table-centered" class="table-responsive mb-0">
 
-                                                <table id="" class="table dt-responsive nowrap w-100">
+                                                <table id="medicine" class="table dt-responsive nowrap w-100">
                                                     <thead>
                                                         <tr>
                                                             <th style="width: 510px;">
@@ -303,9 +303,11 @@
                                                         </tr>
                                                     </thead>
 
-                                                    <tbody class="list" id="staff02">
-
+                                                    <tbody class="list" id="medicine">
+                                                        {% for row in medicine %}
                                                         <tr>
+                                                            <td>{{row[0]}}</td>
+                                                            <td>{{row[1]}}</td>
                                                             <td class="table-action">
                                                                 <form class="action-icon">
                                                                     <a href="edit-medicine.html">
@@ -316,6 +318,7 @@
                                                                 </form>
                                                             </td>
                                                         </tr>
+                                                        {% endfor %}    
                                                     </tbody>
                                                 </table>
                                             </table>
