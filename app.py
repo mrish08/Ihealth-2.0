@@ -34,8 +34,8 @@ def schedule():
 def medicine():
 	medicine = []
 	conn = connection()
-	cursor = conn.cursor()
-	cursor.execute("SELECT * FROM medicine")
+	cur = conn.cursor()
+	cur.execute("SELECT * FROM medicine")
 	for row in cursor.fetchall():
 		medicine.append({"medicine_id": row[0], "medicine_name": row[1]})
 	conn.close()	
@@ -59,16 +59,16 @@ def addmedicine():
 def updatemedicine(medicine_id):
 	md = []
 	conn = connection()
-	cursor = conn.cursor()
+	cur = conn.cursor()
 	if request.method == 'GET':
-		cursor.execute("SELECT * FROM MEDICINE WHERE MEDICINE_ID = %s", (str(medicine_id)))
-		for row in cursor.fetchall():
+		cur.execute("SELECT * FROM MEDICINE WHERE MEDICINE_ID = %s", (str(medicine_id)))
+		for row in cur.fetchall():
 			md.append({"medicine_id": row[0], "medicine_name": row[1]})
 		conn.close()
 		return render_template("medicine.html", medicine = md[0])
 	if request.method == 'POST':
 		name = str(request.form["medicine_name"])
-		cursor.execute("UPDATE MEDICINE SET MEDICINE_NAME = %s WHERE MEDICINE_ID = %s", (medicine_name))
+		cur.execute("UPDATE MEDICINE SET MEDICINE_NAME = %s WHERE MEDICINE_ID = %s", (medicine_name))
 		conn.commit()
 		conn.close()
 		return redirect('/medicine')
