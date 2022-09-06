@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\UNIT\Desktop\ihealthv.2\Ihealth 2.0\virtual"
+VIRTUAL_ENV="C:\xampp\htdocs\Ihealth-2.0\virtual"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
