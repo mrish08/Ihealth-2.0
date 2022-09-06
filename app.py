@@ -6,10 +6,16 @@ import psycopg2
 
 app=Flask(__name__,template_folder='template',static_folder='static')
 def connection():
-   conn = psycopg2.connect(database="iHealth_database",
-                        host="localhost",
-                        user="postgres",
-                        password="123")
+    s = 'localhost'
+    d = 'iHealth_database' 
+    u = 'postgres' 
+    p = '123'
+    conn = psycopg2.connect(host=s, user=u, password=p, database=d)
+    with conn:
+        with conn.cursor() as curs:
+            curs.execute
+    return conn
+
 @app.route("/")
 def index():
 	return render_template("index.html")
@@ -34,8 +40,8 @@ def schedule():
 def medicine():
 	medicine = []
 	conn = connection()
-	cur = conn.cursor()
-	cur.execute("SELECT * FROM medicine")
+	cursor = conn.cursor()
+	cursor.execute("SELECT * FROM medicine")
 	for row in cursor.fetchall():
 		medicine.append({"medicine_id": row[0], "medicine_name": row[1]})
 	conn.close()	
@@ -43,14 +49,13 @@ def medicine():
 	
 @app.route("/addmedicine", methods = ['GET', 'POST'])
 def addmedicine():
-	if request.method == 'GET':
-		return render_template("medicine.html", medicine = {})
+	
 	if request.method == 'POST':
 		medicine_id = int(request.form["medicine_id"])
 		medicine_name = request.form["medicine_name"]
 	conn = connection()
-	cur = conn.cursor()
-	cur.execute("INSERT INTO MEDICINE (medicine_id, medicine_name VALUES (%s, %s)", [medicine_id, medicine_name])
+	cursor = conn.cursor()
+	cursor.execute("INSERT INTO MEDICINE (medicine_id, medicine_name VALUES (%s, %s)", (medicine_id, medicine_name))
 	conn.commit()
 	conn.close()
 	return redirect('/medicine')
@@ -59,16 +64,16 @@ def addmedicine():
 def updatemedicine(medicine_id):
 	md = []
 	conn = connection()
-	cur = conn.cursor()
+	cursor = conn.cursor()
 	if request.method == 'GET':
-		cur.execute("SELECT * FROM MEDICINE WHERE MEDICINE_ID = %s", (str(medicine_id)))
-		for row in cur.fetchall():
+		cursor.execute("SELECT * FROM MEDICINE WHERE MEDICINE_ID = %s", (str(medicine_id)))
+		for row in cursor.fetchall():
 			md.append({"medicine_id": row[0], "medicine_name": row[1]})
 		conn.close()
 		return render_template("medicine.html", medicine = md[0])
 	if request.method == 'POST':
 		name = str(request.form["medicine_name"])
-		cur.execute("UPDATE MEDICINE SET MEDICINE_NAME = %s WHERE MEDICINE_ID = %s", (medicine_name))
+		cursor.execute("UPDATE MEDICINE SET MEDICINE_NAME = %s WHERE MEDICINE_ID = %s", (medicine_name))
 		conn.commit()
 		conn.close()
 		return redirect('/medicine')
