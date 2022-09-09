@@ -15,32 +15,14 @@ def connection():
             curs.execute
     return conn
 
-@app.route("/index")
+
+@app.route("/")
 def index():
 	return render_template("index.html")
 
 @app.route("/clinic")
 def clinic():
-	clinic = []
-	conn = connection()
-	cursor = conn.cursor()
-	cursor.execute("SELECT * FROM clinic_services")
-	for row in cursor.fetchall():
-		clinic.append({"clinic_services_id": row[0], "clinic_services_name": row[1]})
-	conn.close()	
-	return render_template("clinic.html", clinic = clinic)
-	
-
-@app.route("/addclinic", methods = ['GET', 'POST'])
-def addclinic():
-	if request.method == 'POST':
-		clinic_services_name = request.form['clinic_services_name ']
-	conn = connection()
-	cursor = conn.cursor()
-	cursor.execute('INSERT INTO clinic_services (clinic_services_name)'' VALUES (%s)', [clinic_services_name])
-	conn.commit()
-	conn.close()
-	return redirect('/clinic')
+	return render_template("clinic.html")
 
 @app.route("/dental")
 def dental():
@@ -64,6 +46,25 @@ def addschedule():
 	conn.commit()
 	conn.close()
 	return redirect('/schedule')
+
+@app.route('/updateschedule/<int:medicine_id>', methods = ['GET', 'POST'])
+def updatemedicine(medicine_id):
+	md = []
+	conn = connection()
+	cursor = conn.cursor()
+	if request.method == 'GET':
+		cursor.execute("SELECT * FROM MEDICINE WHERE MEDICINE_ID = %s", (str(medicine_id)))
+		for row in cursor.fetchall():
+			md.append({"medicine_id": row[0], "medicine_name": row[1]})
+		conn.close()
+		return render_template("medicine.html", medicine = md[0])
+	if request.method == 'POST':
+		name = str(request.form["medicine_name"])
+		cursor.execute("UPDATE MEDICINE SET MEDICINE_NAME = %s WHERE MEDICINE_ID = %s", (medicine_name))
+		conn.commit()
+		conn.close()
+		return redirect('/medicine')
+
 
 @app.route("/medicine")
 def medicine():
