@@ -20,7 +20,7 @@ def connection():
 def index():
 	return render_template("index.html")
 
-@app.route("/clinic", methods=['GET'])
+@app.route("/clinic")
 def clinic():
 	clinic = []
 	conn = connection()
