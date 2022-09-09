@@ -297,6 +297,10 @@
                                                 <table id="" class="table dt-responsive nowrap w-100">
                                                     <thead>
                                                         <tr>
+                                                            <th style="width: 10px;">
+                                                                <a href="javascript:void(0)" class="sort" data-sort="js-lists-values-user-schedname">Clinic Service ID
+                                                                   </a>
+                                                            </th>
                                                             <th style="width: 510px;">
                                                                 <a href="javascript:void(0)" class="sort" data-sort="js-lists-values-user-schedname">Clinic Service
                                                                     Name</a>
@@ -306,9 +310,10 @@
                                                     </thead>
 
                                                     <tbody class="list" id="staff02">
-                                                        {% for results in clinic %} }
+                                                        
                                                         <tr>
-                                                            <td>{{results}}</td>
+                                                            <td>{{row['0']}}</td>
+                                                            <td>{{row['1']}}</td>
                                                             <td class="table-action">
                                                                 <form class="action-icon">
                                                                     <a href="edit-clinic.html">
@@ -319,7 +324,6 @@
                                                                 </form>
                                                             </td>
                                                         </tr>
-                                                        {% endfor %}
                                                     </tbody>
                                                 </table>
                                             </table>
