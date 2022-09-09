@@ -22,7 +22,44 @@ def index():
 
 @app.route("/clinic")
 def clinic():
-	return render_template("clinic.html")
+	clinic = []
+	conn = connection()
+	cursor = conn.cursor()
+	cursor.execute("SELECT * FROM clinic_services")
+	for row in cursor.fetchall():
+		clinic.append({"clinic_services_id": row[0], "clinic_services_name": row[1]})
+	conn.close()	
+	return render_template("clinic.html", clinic = clinic)
+
+
+@app.route("/addclinic", methods = ['GET', 'POST'])
+def addclinic():
+	if request.method == 'POST':
+		clinic_services_name = request.form['clinic_services_name']
+	conn = connection()
+	cursor = conn.cursor()
+	cursor.execute('INSERT INTO clinic_services (clinic_services_name)'' VALUES (%s)', [clinic_services_name])
+	conn.commit()
+	conn.close()
+	return redirect('/clinic')
+
+@app.route('/updateclinic/<int:clinic_services_id>', methods = ['GET', 'POST'])
+def updateclinic(clinic_services_id):
+	uc = []
+	conn = connection()
+	cursor = conn.cursor()
+	if request.method == 'GET':
+		cursor.execute("SELECT * FROM clinic_services WHERE clinic_services_id = %s", (str(clinic_services_id)))
+		for row in cursor.fetchall():
+			uc.append({"clinic_services_id": row[0], "clinic_services_name": row[1]})
+		conn.close()
+		return render_template("clinic.html", clinic = uc[0])
+	if request.method == 'POST':
+		name = str(request.form["clinic_services_name"])
+		cursor.execute("UPDATE clinic SET clinic_services_name = %s WHERE clinic_services_id= %s", (clinic_services_name))
+		conn.commit()
+		conn.close()
+		return redirect('/clinic')
 
 @app.route("/dental")
 def dental():
