@@ -298,14 +298,17 @@
                                                 <table id="" class="table dt-responsive nowrap w-100">
                                                     <thead>
                                                         <tr>
-                                                            <th style="width: 510px;">
+                                                            <th style="width: 10px;">
+                                                                <a href="javascript:void(0)" class="sort" data-sort="js-lists-values-user-time">Vaccine ID</a>
+                                                            </th>
+                                                            <th style="width: 410px;">
                                                                 <a href="javascript:void(0)" class="sort" data-sort="js-lists-values-user-time">Vaccine Name</a>
                                                             </th>
-                                                            <th style="width: 510px;">
+                                                            <th style="width: 310px;">
                                                                 <a href="javascript:void(0)" class="sort" data-sort="js-lists-values-user-schedname">Lot
                                                                     Name</a>
                                                             </th>
-                                                            <th style="width: 510px;">
+                                                            <th style="width: 210px;">
                                                                 <a href="javascript:void(0)" class="sort" data-sort="js-lists-values-user-schedname">Brand
                                                                     </a>
                                                             </th>
@@ -314,8 +317,12 @@
                                                     </thead>
 
                                                     <tbody class="list" id="staff02">
-
+                                                        {% for row in vaccine %}
                                                         <tr>
+                                                            <td>{{row[0]}}</td>
+                                                            <td>{{row[1]}}</td>
+                                                            <td>{{row[2]}}</td>
+                                                            <td>{{row[3]}}</td>
                                                             <td class="table-action">
                                                                 <form class="action-icon">
                                                                     <a href="edit-vaccination.html">
@@ -325,7 +332,8 @@
                                                                     </a>
                                                                 </form>
                                                             </td>
-                                                        </tr>
+                                                        </tr>'
+                                                        {% endfor %}
                                                     </tbody>
                                                 </table>
                                             </table>

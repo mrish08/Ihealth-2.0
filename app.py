@@ -80,7 +80,7 @@ def vaccination():
 	cursor = conn.cursor()
 	cursor.execute("SELECT * FROM vaccine")
 	for row in cursor.fetchall():
-		vaccination.append({"vaccine_id": row[0], "vaccine_name": row[1]})
+		vaccination.append({"vaccine_id": row[0], "vaccine_name": row[1], "lot_name": row[2], "brand_manufacturer": row[3]})
 	conn.close()	
 	return render_template("vaccination.html", vaccination = vaccination)
 
