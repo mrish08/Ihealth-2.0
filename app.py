@@ -21,7 +21,26 @@ def index():
 
 @app.route("/clinic")
 def clinic():
-	return render_template("clinic.html")
+	clinic = []
+	conn = connection()
+	cursor = conn.cursor()
+	cursor.execute("SELECT * FROM clinic_services")
+	for row in cursor.fetchall():
+		clinic.append({"clinic_services_id": row[0], "clinic_services_name": row[1]})
+	conn.close()	
+	return render_template("clinic.html", clinic = clinic)
+	
+
+@app.route("/addclinic")
+def addclinic():
+	if request.method == 'POST':
+		clinic_services_name = request.form['clinic_services_name ']
+	conn = connection()
+	cursor = conn.cursor()
+	cursor.execute('INySERT INTO clinic_services (clinic_services_name)'' VALUES (%s)', [clinic_services_name])
+	conn.commit()
+	conn.close()
+	return redirect('/clinic')
 
 @app.route("/dental")
 def dental():

@@ -358,15 +358,19 @@
 
                                                     <tbody>
                                                         <tr>
-                                                            <td>
-                                                                <label for="simpleinput" class="form-label">Service
-                                                                Name:&nbsp;<span style="color:#ff0000">*</span></label>
-                                                                <input type="text" id="schedulename" class="form-control">
-                                                                </span>
-                                                            </td><br>
-                                                            <td>
-                                                                <button class="btn btn-primary" type="submit">Submit</button>
-                                                            </td>
+                                                            <form action="/addclinic" method = "POST"></form>
+                                                                <td>
+                                                                    <label for="clinic_services_name " class="form-label">Service
+                                                                    Name:&nbsp;<span style="color:#ff0000">*</span></label>
+                                                                    <input type="text"  name="clinic_services_name " class="form-control">
+                                                                    </span>
+                                                                    </td>
+                                                                    <br>
+                                                                    <td>
+                                                                    <button class="btn btn-primary" type="submit">Submit
+                                                                    </button>
+                                                                </td>
+                                                            </form>
                                                         </tr>
                                                     </tbody>
                                                 </thead>
