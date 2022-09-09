@@ -37,7 +37,7 @@ def addclinic():
 		clinic_services_name = request.form['clinic_services_name ']
 	conn = connection()
 	cursor = conn.cursor()
-	cursor.execute('INySERT INTO clinic_services (clinic_services_name)'' VALUES (%s)', [clinic_services_name])
+	cursor.execute('INSERT INTO clinic_services (clinic_services_name)'' VALUES (%s)', [clinic_services_name])
 	conn.commit()
 	conn.close()
 	return redirect('/clinic')
