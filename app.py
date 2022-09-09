@@ -6,7 +6,7 @@ import psycopg2
 app=Flask(__name__,template_folder='template',static_folder='static')
 def connection():
     s = 'localhost'
-    d = 'test_db' 
+    d = 'iHealth_database' 
     u = 'postgres' 
     p = '123'
     conn = psycopg2.connect(host=s, user=u, password=p, database=d)
@@ -25,10 +25,9 @@ def clinic():
 	clinic = []
 	conn = connection()
 	cursor = conn.cursor()
-	if request.method == 'GET':
-		cursor.execute("SELECT * FROM clinic_services")
-		for row in cursor.fetchall():
-			clinic.append({"clinic_services_id": row[0], "clinic_services_name": row[1]})
+	cursor.execute("SELECT * FROM clinic_services")
+	for row in cursor.fetchall():
+		clinic.append({"clinic_services_id": row[0], "clinic_services_name": row[1]})
 	conn.close()	
 	return render_template("clinic.html", clinic = clinic)
 
