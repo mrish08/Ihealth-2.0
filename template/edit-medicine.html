@@ -1,92 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'layout.html' %}
+    {% block body %}
 
-<head>
-    <meta charset="utf-8">
-    <title>Edit Medicine| iHealth</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
-    <meta content="Coderthemes" name="author">
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="../../static/images/brgyms-icon-white.png">
-
-    <!-- third party css -->
-    <link href="../../static/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
-    <!-- third party css end -->
-
-    <!-- App css -->
-    <link href="../../static/css/icons.min.css" rel="stylesheet" type="text/css">
-    <link href="../../static/css/app-i.min.css" rel="stylesheet" type="text/css" id="light-style">
-    <link href="../../static/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
-
-</head>
-
-<body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
-    <!-- Begin page -->
-    <div class="wrapper">
+<link href="layout.html" rel="import"/>    
+<div class="wrapper">
         <!-- ========== Left Sidebar Start ========== -->
         <div class="leftside-menu">
-
+    
             <!-- LOGO -->
-            <a href="{{ url_for('index') }}" class="logo text-center logo-light">
+            <a href="/index" class="logo text-center logo-light">
                 <span class="logo-lg">
                     <img src="../../static/images/ihealth-logo-with-text.png" alt="" height="40">
                 </span>
             </a>
-
+    
             <ul class="side-nav">
-
+    
                 <li class="side-nav-title side-nav-item">Menu</li>
-
+    
                 <li class="side-nav-item">
-                    <a href="{{ url_for('index') }}" class="side-nav-link">
+                    <a href="/index" class="side-nav-link">
                         <i class="uil-chart-pie"></i>
                         <span> Dashboard </span>
                     </a>
                 </li>
-
+    
                 <li class="side-nav-item">
-                    <a href="{{ url_for('schedule') }}" class="side-nav-link">
+                    <a href="/schedule" class="side-nav-link">
                         <i class="uil-clipboard-alt"></i>
                         <span> Schedule </span>
                     </a>
                 </li>
-
+    
                 <li class="side-nav-item">
-                    <a href="{{ url_for('vaccination') }}" class="side-nav-link">
+                    <a href="/vaccination" class="side-nav-link">
                         <i class="uil-syringe"></i>
                         <span> Vaccination Service</span>
                     </a>
                 </li>
-
+    
                 <li class="side-nav-item">
-                    <a href="{{ url_for('clinic') }}" class="side-nav-link">
-
+                    <a href="/clinic" class="side-nav-link">
+    
                         <i class="uil-clipboard-alt"></i>
                         <span> Clinic Service </span>
                     </a>
                 </li>
-
+    
                 <li class="side-nav-item">
-
-                    <a href="{{ url_for('medicine') }} " class="side-nav-link">
+    
+                    <a href="/medicine" class="side-nav-link">
                         <i class="uil-home-alt"></i>
                         <span>Medicine Pick-up</span>
                 </li>
             </ul>
-
+    
         </div>
         <!-- Sidebar -left -->
-
+    
     </div>
     <!-- Left Sidebar End -->
-
-    <!-- ============================================================== -->
-    <!-- Start Page Content here -->
-    <!-- ============================================================== -->
-
-
-<div class="wrapper">
+    
     <div class="content-page">
         <div class="content">
             <!-- Topbar Start -->
@@ -103,77 +76,7 @@
                         </div>
                     </li>
 
-                    <li class="dropdown notification-list">
-                        <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <i class="dripicons-bell noti-icon"></i>
-                            <span class="noti-icon-badge"></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg">
-
-                            <!-- item-->
-                            <div class="dropdown-item noti-title">
-                                <h5 class="m-0">
-                                    <span class="float-end">
-                                        <a href="javascript: void(0);" class="text-dark">
-                                            <small>Clear All</small>
-                                        </a>
-                                    </span>Notification
-                                </h5>
-                            </div>
-
-                            <div style="max-height: 230px;" data-simplebar="">
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon bg-info">
-                                        <i class="mdi mdi-account-plus"></i>
-                                    </div>
-                                    <p class="notify-details">New user registered.
-                                        <small class="text-muted">5 hours ago</small>
-                                    </p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="blotter.html" class="dropdown-item notify-item">
-                                    <div class="notify-icon">
-                                        <img src="../../static/images/users/profile1.png" class="img-fluid rounded-circle" alt="">
-                                    </div>
-                                    <p class="notify-details">Juan Dela Cruz</p>
-                                    <p class="text-muted mb-0 user-msg">
-                                        <small>Requested a vaccination.</small>
-                                    </p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="blotter.html" class="dropdown-item notify-item">
-                                    <div class="notify-icon">
-                                        <img src="../../static/images/users/profile2.png" class="img-fluid rounded-circle" alt="">
-                                    </div>
-                                    <p class="notify-details">Maria Clara</p>
-                                    <p class="text-muted mb-0 user-msg">
-                                        <small>Requested a booster.</small>
-                                    </p>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="notify-icon">
-                                        <img src="../../static/images/users/profile3.png" class="img-fluid rounded-circle" alt="">
-                                    </div>
-                                    <p class="notify-details">Sisa Usisa</p>
-                                    <p class="text-muted mb-0 user-msg">
-                                        <small>Requested a vaccine.</small>
-                                    </p>
-                                </a>
-                            </div>
-
-                            <!-- All-->
-                            <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
-                                View All
-                            </a>
-
-                        </div>
-                    </li>
+                    
 
                     <li class="notification-list">
                         <a class="nav-link" href="../../BITBo/admin/index.html">
@@ -267,7 +170,6 @@
                     </div>
                 </div>
             </div>
-            <!-- end Topbar -->
 
             <!-- Start Content-->
             <div class="container-fluid">
