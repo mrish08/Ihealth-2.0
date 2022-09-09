@@ -23,7 +23,7 @@ def index():
 
 @app.route("/clinic",methods=['GET','POST'])
 def clinic():
-	clinic = []
+	
 	conn = connection()
 	cursor = conn.cursor()
 	try:
@@ -31,8 +31,7 @@ def clinic():
 	except:
 		print("Error executing SELECT")
 	results=cursor.fetchall()
-	print(results)
-
+	print(results)	
 	return render_template("clinic.html", clinic = results)
 
 
