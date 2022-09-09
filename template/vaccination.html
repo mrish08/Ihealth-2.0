@@ -367,21 +367,22 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <label for="simpleinput" class="form-label">Vaccine
-                                                                    Name:&nbsp;<span style="color:#ff0000">*</span></label>
-                                                                <input type="text" id="schedulename" class="form-control">
+                                                                <form action="/addvaccine" method = "POST">
+                                                                <label for="vaccine_name" class="form-label">Vaccine
+                                                                Name:&nbsp;<span style="color:#ff0000">*</span></label>
+                                                                <input type="text"  name="vaccine_name" class="form-control">
                                                                 </span>
                                                             </td>
                                                             <td class="col-sm-6">
-                                                                <label for="example-time" class="form-label">Lot name:&nbsp;<span
-                                                                        style="color:#ff0000">*</span></label>
-                                                                <input class="form-control" id="time" type="time" name="time">
+                                                                <label for="lot_name" class="form-label">Lot
+                                                                    Name:&nbsp;<span style="color:#ff0000">*</span></label>
+                                                                    <input type="text"  name="lot_name" class="form-control">
                                                                 </span>
                                                             </td>
                                                             <td>
-                                                                <label for="simpleinput" class="form-label">Brand
+                                                                <label for="brand_manufacturer" class="form-label">Brand
                                                                     Name:&nbsp;<span style="color:#ff0000">*</span></label>
-                                                                <input type="text" id="schedulename" class="form-control">
+                                                                    <input type="text"  name="brand_manufacturer" class="form-control">
                                                                 </span>
                                                             </td><br>
                                                             <td>
