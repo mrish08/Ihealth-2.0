@@ -73,35 +73,6 @@ def dental():
 	return render_template("clinic.html", dental = dental)
 
 
-@app.route("/addclinic", methods = ['POST'])
-def addclinic():
-	if request.method == 'POST':
-		clinic_services_name = request.form['clinic_services_name']
-	conn = connection()
-	cursor = conn.cursor()
-	cursor.execute('INSERT INTO clinic_services (clinic_services_name)'' VALUES (%s)', [clinic_services_name])
-	conn.commit()
-	conn.close()
-	return redirect('/clinic')
-
-@app.route('/updateclinic/<int:clinic_services_id>', methods = ['GET', 'POST'])
-def updateclinic(clinic_services_id):
-	uc = []
-	conn = connection()
-	cursor = conn.cursor()
-	if request.method == 'GET':
-		cursor.execute("SELECT * FROM clinic_services WHERE clinic_services_id = %s", (str(clinic_services_id)))
-		for row in cursor.fetchall():
-			uc.append({"clinic_services_id": row[0], "clinic_services_name": row[1]})
-		conn.close()
-		return render_template("clinic.html", clinic = uc[0])
-	if request.method == 'POST':
-		name = str(request.form["clinic_services_name"])
-		cursor.execute("UPDATE clinic SET clinic_services_name = %s WHERE clinic_services_id= %s", (clinic_services_name))
-		conn.commit()
-		conn.close()
-		return redirect('/clinic')
-
 @app.route("/vaccination")
 def vaccination():
 	vaccination = []
@@ -113,19 +84,21 @@ def vaccination():
 	conn.close()	
 	return render_template("vaccination.html", vaccination = vaccination)
 
-@app.route("/addvaccination", methods = ['GET', 'POST'])
+@app.route("/addvaccination", methods = ['POST'])
 def addvaccination():
 	if request.method == 'POST':
 		vaccine_name = request.form['vaccine_name']
+		lot_name = request.form['lot_name']
+		brand_manufacturer = request.form['brand_manufacturer']
 	conn = connection()
 	cursor = conn.cursor()
 	cursor.execute('INSERT INTO vaccine (vaccine_name, lot_name, brand_manufacturer)'' VALUES (%s, %s, %s)', [vaccine_name, lot_name, brand_manufacturer])
 	conn.commit()
 	conn.close()
-	return redirect('/vaccine')
+	return redirect('/vaccination')
 
 @app.route('/updatevaccination/<int:vaccine_id>', methods = ['GET', 'POST'])
-def updatevaccine(vaccine_id):
+def updatevaccination(vaccine_id):
 	uv = []
 	conn = connection()
 	cursor = conn.cursor()
@@ -134,13 +107,13 @@ def updatevaccine(vaccine_id):
 		for row in cursor.fetchall():
 			uv.append({"vaccine_id": row[0], "vaccine_name": row[1], "lot_name": row[2], "brand_manufacturer": row[3]})
 		conn.close()
-		return render_template("vaccine.html", vaccine = uv[0])
+		return render_template("vaccination.html", vaccine = uv[0])
 	if request.method == 'POST':
 		name = str(request.form["vaccine_name"])
 		cursor.execute("UPDATE vaccine SET vaccine_name = %s WHERE vaccine_id = %s", (vaccine_name))
 		conn.commit()
 		conn.close()
-		return redirect('/vaccine')
+		return redirect('/vaccination')
 
 @app.route("/schedule")
 def schedule():
@@ -156,8 +129,6 @@ def addschedule():
 	conn.commit()
 	conn.close()
 	return redirect('/schedule')
-
-
 
 
 @app.route("/medicine")
