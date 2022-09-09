@@ -153,8 +153,8 @@ def addmedicine():
 	conn.close()
 	return redirect('/medicine')
 
-@app.route('/editmedicine/<int:medicine_id>', methods = ['GET', 'POST'])
-def editmedicine(medicine_id):
+@app.route('/updatemedicine/<int:medicine_name>', methods = ['GET', 'POST'])
+def updatemedicine(medicine_id):
 	md = []
 	conn = connection()
 	cursor = conn.cursor()
