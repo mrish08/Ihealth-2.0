@@ -1,3 +1,4 @@
+from crypt import methods
 from distutils.log import debug
 from flask import Flask, render_template,request, redirect,flash, url_for, session, logging
 import os
@@ -20,16 +21,19 @@ def connection():
 def index():
 	return render_template("index.html")
 
-@app.route("/clinic")
+@app.route("/clinic",methods=['GET','POST'])
 def clinic():
 	clinic = []
 	conn = connection()
 	cursor = conn.cursor()
-	cursor.execute("SELECT * FROM clinic_services")
-	for row in cursor.fetchall():
-		clinic.append({"clinic_services_id": row[0], "clinic_services_name": row[1]})
-	conn.close()	
-	return render_template("clinic.html", clinic = clinic)
+	try:
+		cursor.execute("SELECT * FROM clinic_services")
+	except:
+		print("Error executing SELECT")
+	results=cursor.fetchall()
+	print(results)
+
+	return render_template("clinic.html", clinic = results)
 
 
 @app.route("/addclinic", methods = ['POST'])
