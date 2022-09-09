@@ -318,27 +318,14 @@
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody class="list" id="vaccination">
-                                                    <?php 
 
-                                                    $host = "localhost"; 
-                                                    $user = "postgres"; 
-                                                    $pass = "123*"; 
-                                                    $db = "iHealth_database"; 
-
-                                                    $con = pg_connect("host=$host dbname=$db user=$user password=$pass")
-                                                        or die ("Could not connect to server\n"); 
-
-                                                    $query = "SELECT * FROM vaccine"; 
-
-                                                    $rs = pg_query($con, $query) or die("Cannot execute query: $query\n");
-
-                                                    while ($row = pg_fetch_row($rs)) {
-                                                    echo '<tr>
-                                                            <td>' . $row[0] . '</td>
-                                                            <td>' . $row[1] . '</td>
-                                                            <td>' . $row[2] . '</td>
-                                                            <td>' . $row[3] . '</td>
+                                                    <tbody class="list" id="staff02">
+                                                     
+                                                        <tr>
+                                                            <td>{{row[0]}}</td>
+                                                            <td>{{row[1]}}</td>
+                                                            <td>{{row[2]}}</td>
+                                                            <td>{{row[3]}}</td>
                                                             <td class="table-action">
                                                                 <form class="action-icon">
                                                                     <a href="edit-vaccination.html">
@@ -348,16 +335,8 @@
                                                                     </a>
                                                                 </form>
                                                             </td>
-                                                          </tr>';
-                                                    }
-
-                                                    pg_close($con); 
-
-                                              
-                                                   
-                                                     
-                                                     
-                                                        ?>
+                                                        </tr>
+                                                        {% endfor %}
                                                     </tbody>
                                                 </table>
                                             </table>
