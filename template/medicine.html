@@ -1,13 +1,8 @@
 {% extends 'layout.html' %}
-
-
-    <!-- Begin page -->
-    
-    <!-- ============================================================== -->
-    <!-- Start Page Content here -->
-    <!-- ============================================================== -->
     {% block body %}
-    <div class="wrapper">
+
+<link href="layout.html" rel="import"/>    
+<div class="wrapper">
         <!-- ========== Left Sidebar Start ========== -->
         <div class="leftside-menu">
     
@@ -276,8 +271,8 @@
                                                 <table id="" class="table dt-responsive nowrap w-100">
                                                     <thead>
                                                         <tr>
-                                                            <th style="width: 10px;">
-                                                                <a href="javascript:void(0)" class="sort" data-sort="js-lists-values-user-time">Medicine ID#</a>
+                                                            <th style="width: 510px;">
+                                                                <a href="javascript:void(0)" class="sort" data-sort="js-lists-values-user-time">Medicine ID</a>
                                                             </th>
                                                             <th style="width: 510px;">
                                                                 <a href="javascript:void(0)" class="sort" data-sort="js-lists-values-user-time">Medicine Name</a>
@@ -304,7 +299,9 @@
                                                         {% endfor %}    
                                                     </tbody>
                                                 </table>
-                                            </table>
+                                            <form>
+                                                
+                                            </form>
                                         </div>
                                         <!-- end patients-->
 
@@ -354,8 +351,8 @@
                                                                 <td>
                                                                 <button class="btn btn-primary" type="submit">Submit
                                                                 </button>
+                                                                </form>
                                                             </td>
-                                                        </form>
                                                         </tr>
                                                     </tbody>
                                                 </thead>
