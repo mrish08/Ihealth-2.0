@@ -361,21 +361,23 @@
 
                                                     <tbody>
                                                         <tr>
-                                                            <td>
-                                                                <label for="simpleinput" class="form-label">Schedule
+                                                            <form action="/addschedule" method = "POST"></form>
+                                                                <td>
+                                                                    <label for="schedule_name" class="form-label">Schedule
                                                                     Name:&nbsp;<span style="color:#ff0000">*</span></label>
-                                                                <input type="text" id="schedulename" class="form-control">
-                                                                </span>
-                                                            </td>
-                                                            <td class="col-sm-6">
-                                                                <label for="example-time" class="form-label">Time:&nbsp;<span
-                                                                        style="color:#ff0000">*</span></label>
-                                                                <input class="form-control" id="time" type="time" name="time">
-                                                                </span>
-                                                            </td><br>
-                                                            <td>
-                                                                <button class="btn btn-primary" type="submit">Submit</button>
-                                                            </td>
+                                                                    <input type="text"  name="schedule_name" class="form-control">
+                                                                    </span>
+                                                                </td>
+                                                                <td class="col-sm-6">
+                                                                    <label for="schedule timestamp" class="form-label">Time:&nbsp;<span
+                                                                            style="color:#ff0000">*</span></label>
+                                                                    <input class="form-control" type="time" name="schedule timestamp">
+                                                                    </span>
+                                                                </td><br>
+                                                                <td>
+                                                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                                                </td>
+                                                            </form>
                                                         </tr>
                                                     </tbody>
                                                 </thead>
