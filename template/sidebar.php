@@ -8,16 +8,16 @@
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="../../static/images/brgyms-icon-white.png">
+    <link rel="shortcut icon" href="../../assets/images/brgyms-icon-white.png">
 
     <!-- third party css -->
-    <link href="../../static/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
     <!-- third party css end -->
 
     <!-- App css -->
-    <link href="../../static/css/icons.min.css" rel="stylesheet" type="text/css">
-    <link href="../../static/css/app-i.min.css" rel="stylesheet" type="text/css" id="light-style">
-    <link href="../../static/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
+    <link href="../../assets/css/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/app-i.min.css" rel="stylesheet" type="text/css" id="light-style">
+    <link href="../../assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
 
 </head>
 
@@ -29,9 +29,9 @@
         <div class="leftside-menu">
 
             <!-- LOGO -->
-            <a href="admin-index.html" class="logo text-center logo-light">
+            <a href="admin-index.php" class="logo text-center logo-light">
                 <span class="logo-lg">
-                    <img src="../../static/images/ihealth-logo-with-text.png" alt="" height="40">
+                    <img src="../../assets/images/ihealth-logo-with-text.png" alt="" height="40">
                 </span>
             </a>
 
@@ -40,28 +40,28 @@
                 <li class="side-nav-title side-nav-item">Menu</li>
 
                 <li class="side-nav-item">
-                    <a href="index.html" class="side-nav-link">
+                    <a href="index.php" class="side-nav-link">
                         <i class="uil-chart-pie"></i>
                         <span> Dashboard </span>
                     </a>
                 </li>
 
                 <li class="side-nav-item">
-                    <a href="schedule.html" class="side-nav-link">
+                    <a href="schedule.php" class="side-nav-link">
                         <i class="uil-clipboard-alt"></i>
                         <span> Schedule </span>
                     </a>
                 </li>
 
                 <li class="side-nav-item">
-                    <a href="vaccination.html" class="side-nav-link">
+                    <a href="vaccination.php" class="side-nav-link">
                         <i class="uil-syringe"></i>
                         <span> Vaccination Service</span>
                     </a>
                 </li>
 
                 <li class="side-nav-item">
-                    <a href="clinic.html" class="side-nav-link">
+                    <a href="clinic.php" class="side-nav-link">
 
                         <i class="uil-clipboard-alt"></i>
                         <span> Clinic Service </span>
@@ -70,7 +70,7 @@
 
                 <li class="side-nav-item">
 
-                    <a href="medicine.html" class="side-nav-link">
+                    <a href="medicine.php" class="side-nav-link">
                         <i class="uil-home-alt"></i>
                         <span>Medicine Pick-up</span>
                 </li>
