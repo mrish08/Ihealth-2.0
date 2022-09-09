@@ -200,23 +200,29 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <label for="simpleinput" class="form-label">Medicine
+                                                    <form method="POST" action="/updatemedicine">
+                                                    <label for="medicine_name" class="form-label">Medicine
                                                         Name:&nbsp;<span style="color:#ff0000">*</span></label>
-                                                    <input type="text" id="schedulename" class="form-control">
+                                                    <input type="text" id="md.medicine_name" class="form-control">
                                                     </span>
                                                 </td>
                                                 <br>
                                                 <td>
-                                                    <a href="medicine.html">
-                                                        <button class="btn btn-secondary" type="submit">Cancel</button>
-                                                    </a>
+                                                   
 
                                                     <a href="">
                                                         <button class="btn btn-primary" type="submit">Save
                                                             Changes</button>
                                                     </a>
                                                 </td>
+                                            </form>
+                                                <td>
+                                                    <a href="medicine.html">
+                                                        <button class="btn btn-secondary" type="submit">Cancel</button>
+                                                    </a>
+                                                </td>
                                             </tr>
+                                       
                                         </tbody>
                                     </div>
                                 </div>
