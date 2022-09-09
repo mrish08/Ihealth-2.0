@@ -35,6 +35,17 @@ def vaccination():
 def schedule():
 	return render_template("schedule.html")
 
+@app.route("/addschedule")
+def addschedule():
+	if request.method == 'POST':
+		schedule_name = request.form['schedule_name']
+	conn = connection()
+	cursor = conn.cursor()
+	cursor.execute('INSERT INTO medicine (schedule_name)'' VALUES (%s)', [schedule_name])
+	conn.commit()
+	conn.close()
+	return redirect('/schedule')
+
 @app.route("/medicine")
 def medicine():
 	medicine = []
