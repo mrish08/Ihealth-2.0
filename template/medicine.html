@@ -387,9 +387,10 @@
                                                     pg_close($con); 
                                                    
                                                     <tbody action="/clinic" method="GET">
+                                                        {% for row in clinic %}
                                                         <tr>
-                                                           <td></td>
-                                                           <td></td>
+                                                           <td>{{ row[0] }}</td>
+                                                           <td>{{ row[1] }}</td>
                                                             <td class="table-action">
                                                                 <form class="action-icon">
                                                                     <a href="edit-medicine.html">
@@ -400,7 +401,7 @@
                                                                 </form>
                                                             </td>
                                                         </tr>
-                                                         
+                                                         {% endfor %}
                                                     </tbody>
                                                 </table>
                                                 
