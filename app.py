@@ -132,7 +132,7 @@ def schedule():
 	conn.close()	
 	return render_template("schedule.html", sched = sched)
 
-@app.route("/addschedule")
+@app.route("/addschedule", methods = ['GET', 'POST'])
 def addschedule():
 	if request.method == 'POST':
 		schedule_name = request.form['schedule_name']
