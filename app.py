@@ -169,7 +169,7 @@ def updatemedicine(medicine_id):
 		cursor.execute("UPDATE medicine SET medicine_name = %s WHERE medicine_id = %s", (medicine_name))
 		conn.commit()
 		conn.close()
-		return redirect('/medicine')
+		return redirect('/updatemedicine')
 		
 if __name__ == '__main__':
 	app.debug=True
