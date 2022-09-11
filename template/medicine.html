@@ -225,13 +225,13 @@
                                                             <td>{{ medicine.medicine_id}}</td>
                                                             <td>{{ medicine.medicine_name }}</td>
                                                             <td class="table-action">
-                                                                {% for md in medicine %}
+                                                                {% for updatemedicine in medicine %}
                                                                         <button type="button" class="btn btn-warning">
                                                                             <a href="updatemedicine/{{ md.medicine_name }}">
                                                                             <i class="mdi mdi-account-edit-outline"></i>
                                                                         </button>
                                                                     </a>
-                                                                {% endfor %}
+                                                                    {% endfor %}    
                                                             </td>
                                                         </tr>
                                                         {% endfor %}    
