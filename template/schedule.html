@@ -220,9 +220,17 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="tab-content">
-
-                                        <div class="tab-pane show active" id="buttons-table-patients" class="table responsive nowrap w-100" data-toggle="lists" data-lists-values='["js-lists-values-user-time", "js-lists-values-user-schedname"]'>
-                                            <table id="table table-centered" class="table-responsive mb-0">
+                                        <div class="tab-pane show active" id="buttons-table-patients"  data-toggle="lists" >
+                                            <div class="dataTables_length" id="basic-datatable_length">
+                                                <div class="col-sm-12 col-md-6">
+                                                <label class="form-label">Show  entries
+                                                    <select name="basic-datatable_length" aria-controls="basic-datatable" class="form-select form-select-sm">
+                                                        <option value="10">10</option>
+                                                        <option value="25">25</option>
+                                                        <option value="50">50</option>
+                                                        <option value="100">100</option>
+                                                    </select></label></div>
+                                                    </div>
 
                                                 <table id="" class="table dt-responsive nowrap w-100">
                                                     <thead>
@@ -239,19 +247,38 @@
                                                     </thead>
 
                                                     <tbody class="list" id="staff02">
+                                                        {% for schedule in schedule %}
                                                         <tr>
+                                                            <td>{{ schedule.clinic_sched_id}}</td>
+                                                            <td>{{ schedule.schedule_name }}</td>
                                                             <td class="table-action">
-                                                                <form class="action-icon">
-                                                                    <a href="edit-schedule.html">
-                                                                        <button type="button" class="btn btn-warning">
-                                                                            <i class="mdi mdi-account-edit-outline"></i>
-                                                                        </button>
-                                                                    </a>
-                                                                </form>
+                                                                <button type="button" class="btn btn-warning">
+                                                                    <a href="updateschedule/{{ schedule.clinic_sched_id }}">
+                                                                    <i class="mdi mdi-account-edit-outline"></i>
+                                                                </button>
+                                                            </a>
                                                             </td>
                                                         </tr>
+                                                        {% endfor %}    
                                                     </tbody>
                                                 </table>
+                                            </tbody>
+                                        </table>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-4"></div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="dataTables_paginate paging_simple_numbers" id="basic-datatable_paginate">
+                                                <ul class="pagination pagination-rounded">
+                                                    <li class="paginate_button page-item previous disabled" id="basic-datatable_previous">
+                                                        <a href="#" aria-controls="basic-datatable" data-dt-idx="0" tabindex="0" class="page-link">
+                                                            <i class="mdi mdi-chevron-left"></i></a></li>
+                                                            <li class="paginate_button page-item active">
+                                                                <a href="#" aria-controls="basic-datatable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
+                                                               
+                                                                <li class="paginate_button page-item next" id="basic-datatable_next"><a href="#" aria-controls="basic-datatable" data-dt-idx="7" tabindex="0" class="page-link"><i class="mdi mdi-chevron-right"></i></a></li></ul>
+                                                            </div>
+                                                        </div>
+                                                        </div>
                                             </table>
                                         </div>
                                         <!-- end patients-->
