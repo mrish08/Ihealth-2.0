@@ -43,6 +43,7 @@ def addclinic():
 	conn.close()
 	return redirect('/clinic')
 
+
 @app.route('/updateclinic/<int:clinic_services_id>', methods = ['GET', 'POST'])
 def updateclinic(clinic_services_id):
 	uc = []
@@ -53,13 +54,14 @@ def updateclinic(clinic_services_id):
 		for row in cursor.fetchall():
 			uc.append({"clinic_services_id": row[0], "clinic_services_name": row[1]})
 		conn.close()
-		return render_template("clinic.html", clinic = uc[0])
+		return render_template("updateclinic.html", clinic = uc[0])
 	if request.method == 'POST':
-		name = str(request.form["clinic_services_name"])
-		cursor.execute("UPDATE clinic SET clinic_services_name = %s WHERE clinic_services_id= %s", (clinic_services_name))
+		clinic_services_name = str(request.form["clinic_services_name"])
+		cursor.execute("UPDATE clinic SET clinic_services_name = %s WHERE clinic_services_id = %s", (clinic_services_name, clinic_services_id))
 		conn.commit()
 		conn.close()
 		return redirect('/clinic')
+
 
 @app.route("/dental")
 def dental():
