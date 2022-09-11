@@ -123,18 +123,45 @@ def updatevaccination(vaccine_id):
 
 @app.route("/schedule")
 def schedule():
-	return render_template("schedule.html")
+	sched = []
+	conn = connection()
+	cursor = conn.cursor()
+	cursor.execute("SELECT * FROM clinic_sched")
+	for row in cursor.fetchall():
+		sched.append({"clinic_sched_id": row[0], "schedule_name": row[1], "schedule": row[2]})
+	conn.close()	
+	return render_template("schedule.html", sched = sched)
 
 @app.route("/addschedule")
 def addschedule():
 	if request.method == 'POST':
 		schedule_name = request.form['schedule_name']
+		schedule = request.form['schedule']
 	conn = connection()
 	cursor = conn.cursor()
-	cursor.execute('INSERT INTO medicine (schedule_name)'' VALUES (%s)', [schedule_name])
+	cursor.execute('INSERT INTO clinic_sched (schedule_name, schedule)'' VALUES (%s,%s)', [schedule_name, schedule])
 	conn.commit()
 	conn.close()
 	return redirect('/schedule')
+
+@app.route('/updateschedule/<int:clinic_sched_id>', methods = ['GET', 'POST'])
+def updateschedule( clinic_sched_id ):
+	sc = []
+	conn = connection()
+	cursor = conn.cursor()
+	if request.method == 'GET':
+		cursor.execute("SELECT * FROM clinic_sched WHERE clinic_sched_id = %s", (str(clinic_sched_id)))
+		for row in cursor.fetchall():
+			sc.append({"clinic_sched_id ": row[0], "schedule_name": row[1]})
+		conn.close()
+		return render_template("updateschedule.html", sched = sc[0])
+	if request.method == 'POST':
+		schedule_name = str(request.form["schedule_name"])
+		schedule = str(request.form["schedule"])
+		cursor.execute("UPDATE clinic_sched SET schedule_name, schedule = %s,%s WHERE  clinic_sched_id = %s", (schedule_name, schedule,  clinic_sched_id ))
+		conn.commit()
+		conn.close()
+		return redirect('/schedule')
 
 
 @app.route("/medicine")
