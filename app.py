@@ -166,7 +166,7 @@ def updatemedicine(medicine_id):
 		return render_template("updatemedicine.html", medicine = md[0])
 	if request.method == 'POST':
 		medicine_name = str(request.form["medicine_name"])
-		cursor.execute("UPDATE medicine SET medicine_name = %s WHERE medicine_id = %s", (medicine_name, medicine_id))
+		cursor.execute("UPDATE medicine SET medicine_name = %s WHERE medicine_id = %s", (medicine_name))
 		conn.commit()
 		conn.close()
 		return redirect('/medicine')
