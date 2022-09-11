@@ -163,7 +163,7 @@ def updatemedicine(medicine_id):
 		for row in cursor.fetchall():
 			md.append({"medicine_id": row[0], "medicine_name": row[1]})
 		conn.close()
-		return render_template("medicine.html", medicine = md[0])
+		return render_template("updatemedicine.html", medicine = md[0])
 	if request.method == 'POST':
 		name = str(request.form["medicine_name"])
 		cursor.execute("UPDATE medicine SET medicine_name = %s WHERE medicine_id = %s", (medicine_name))
