@@ -123,14 +123,14 @@ def updatevaccination(vaccine_id):
 
 @app.route("/schedule")
 def schedule():
-	sched = []
+	schedule = []
 	conn = connection()
 	cursor = conn.cursor()
 	cursor.execute("SELECT * FROM clinic_sched")
 	for row in cursor.fetchall():
 		sched.append({"clinic_sched_id": row[0], "schedule_name": row[1], "schedule": row[2]})
 	conn.close()	
-	return render_template("schedule.html", sched = sched)
+	return render_template("schedule.html", sched = schedule)
 
 @app.route("/addschedule", methods = ['POST'])
 def addschedule():
