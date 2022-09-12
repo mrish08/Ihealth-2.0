@@ -160,7 +160,7 @@ def updateschedule(clinic_sched_id):
 	if request.method == 'POST':
 		schedule = str(request.form["schedule"])
 		schedule_name = str(request.form["schedule_name"])
-		cursor.execute("UPDATE clinic_sched SET schedule_name = %s,%s WHERE clinic_sched_id = %s", (schedule_name,schedule,clinic_sched_id))
+		cursor.execute("UPDATE clinic_sched SET (schedule,schedule_name) = (%s,%s) WHERE clinic_sched_id = %s", (schedule,schedule_name,clinic_sched_id))
 		conn.commit()
 		conn.close()
 		return redirect('/schedule')
