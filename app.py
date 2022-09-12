@@ -135,11 +135,12 @@ def schedule():
 @app.route("/addschedule", methods = ['POST'])
 def addschedule():
 	if request.method == 'POST':
-		schedule_name = request.form['schedule_name']
 		schedule = request.form['schedule']
+		schedule_name = request.form['schedule_name']
+		
 	conn = connection()
 	cursor = conn.cursor()
-	cursor.execute('INSERT INTO clinic_sched (schedule_name,schedule)'' VALUES (%s,%s)', [schedule_name, schedule])
+	cursor.execute('INSERT INTO clinic_sched (schedule,schedule_name)'' VALUES (%s,%s)', [ schedule,schedule_name])
 	conn.commit()
 	conn.close()
 	return redirect('/schedule')
@@ -158,7 +159,7 @@ def updateschedule( clinic_sched_id ):
 	if request.method == 'POST':
 		schedule = str(request.form["schedule"])
 		schedule_name = str(request.form["schedule_name"])
-		cursor.execute("UPDATE clinic_sched SET schedule,schedule_name = %s,%s WHERE  clinic_sched_id = %s", (schedule,schedule_name, clinic_sched_id ))
+		cursor.execute("UPDATE clinic_sched SET schedule,schedule_name = %s,%s WHERE  clinic_sched_id = %s", (schedule, schedule_name, clinic_sched_id ))
 		conn.commit()
 		conn.close()
 		return redirect('/schedule')
