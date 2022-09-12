@@ -115,7 +115,7 @@ def updatevaccination(vaccine_id):
 		vaccine_name = str(request.form["vaccine_name"])
 		lot_name = str(request.form["lot_name"])
 		brand_manufacturer = str(request.form["brand_manufacturer"])
-		cursor.execute("UPDATE vaccine SET vaccine_name, lot_name, brand_manufacturer = %s, %s, %s  WHERE vaccine_id = %s", (vaccine_name, lot_name, brand_manufacturer, vaccine_id))
+		cursor.execute("UPDATE vaccine SET vaccine_name, lot_name, brand_manufacturer = %s,%s,%s  WHERE vaccine_id = %s", (vaccine_name, lot_name, brand_manufacturer, vaccine_id))
 		conn.commit()
 		conn.close()
 		return redirect('/vaccination')
@@ -152,7 +152,7 @@ def updateschedule( clinic_sched_id ):
 	if request.method == 'GET':
 		cursor.execute("SELECT * FROM clinic_sched WHERE clinic_sched_id = %s", (str(clinic_sched_id)))
 		for row in cursor.fetchall():
-			sc.append({"clinic_sched_id ": row[0], "schedule": row[1], "schedule_name": row[2]})
+			sc.append({"clinic_sched_id ": row[0], "schedule": row[1]})
 		conn.close()
 		return render_template("updateschedule.html", sched = sc[0])
 	if request.method == 'POST':
