@@ -159,9 +159,9 @@ def updateschedule(clinic_sched_id):
 		conn.close()
 		return render_template("updateschedule.html", schedule = sc[0])
 	if request.method == 'POST':
-		schedule = str(request.form["schedule"])
-		schedule_name = str(request.form["schedule_name"])
-		cursor.execute("UPDATE clinic_sched SET (schedule,schedule_name) = (%s,%s) WHERE clinic_sched_id = %s", (schedule,schedule_name,clinic_sched_id))
+		schedule = str(request.form["schedule_name"])
+		schedule_name = str(request.form["schedule"])
+		cursor.execute("UPDATE clinic_sched SET (schedule_name,schedule) = (%s,%s) WHERE clinic_sched_id = %s", (schedule_name,schedule,clinic_sched_id))
 		conn.commit()
 		conn.close()
 		return redirect('/schedule')
