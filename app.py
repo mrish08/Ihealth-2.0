@@ -115,7 +115,7 @@ def updatevaccination(vaccine_id):
 		vaccine_name = str(request.form["vaccine_name"])
 		lot_name = str(request.form["lot_name"])
 		brand_manufacturer = str(request.form["brand_manufacturer"])
-		cursor.execute("UPDATE vaccine SET vaccine_name, lot_name, brand_manufacturer = %s,%s,%s  WHERE vaccine_id = %s", (vaccine_name, lot_name, brand_manufacturer, vaccine_id))
+		cursor.execute("UPDATE vaccine SET vaccine_name,lot_name,brand_manufacturer = %s,%s,%s  WHERE vaccine_id = %s", (vaccine_name, lot_name, brand_manufacturer, vaccine_id))
 		conn.commit()
 		conn.close()
 		return redirect('/vaccination')
