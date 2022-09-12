@@ -128,15 +128,16 @@ def schedule():
 	cursor = conn.cursor()
 	cursor.execute("SELECT * FROM clinic_sched")
 	for row in cursor.fetchall():
-		schedule.append({"clinic_sched_id": row[0], "schedule_name": row[1], "schedule": row[2]})
+		schedule.append({"clinic_sched_id": row[0], "schedule_name": row[1],"schedule": row[2]})
 	conn.close()	
 	return render_template("schedule.html", schedule = schedule)
 
-@app.route("/addschedule", methods = ['POST'])
+
+
+@app.route("/addschedule", methods = ['GET', 'POST'])
 def addschedule():
 	if request.method == 'POST':
 		schedule_name = request.form['schedule_name']
-		schedule = request.form['schedule']
 	conn = connection()
 	cursor = conn.cursor()
 	cursor.execute('INSERT INTO clinic_sched (schedule_name,schedule)'' VALUES (%s,%s)', [schedule_name, schedule])
@@ -144,22 +145,22 @@ def addschedule():
 	conn.close()
 	return redirect('/schedule')
 
+
 @app.route('/updateschedule/<int:clinic_sched_id>', methods = ['GET', 'POST'])
-def updateschedule( clinic_sched_id ):
+def updateschedule(clinic_sched_id):
 	sc = []
 	conn = connection()
 	cursor = conn.cursor()
 	if request.method == 'GET':
 		cursor.execute("SELECT * FROM clinic_sched WHERE clinic_sched_id = %s", (str(clinic_sched_id)))
 		for row in cursor.fetchall():
-			sc.append({"clinic_sched_id ": row[0], "schedule_name": row[1], "schedule": row[2]})
+			sc.append({"clinic_sched_id": row[0], "schedule_name": row[1], "schedule": row[2]})
 		conn.close()
 		return render_template("updateschedule.html", schedule = sc[0])
 	if request.method == 'POST':
-
-		schedule_name = str(request.form["schedule_name"])
 		schedule = str(request.form["schedule"])
-		cursor.execute("UPDATE clinic_sched SET schedule_name,schedule = %s,%s WHERE  clinic_sched_id = %s", (schedule_name,schedule,  clinic_sched_id ))
+		schedule_name = str(request.form["schedule_name"])
+		cursor.execute("UPDATE clinic_sched SET schedule_name = %s,%s WHERE clinic_sched_id = %s", (schedule_name,schedule,clinic_sched_id))
 		conn.commit()
 		conn.close()
 		return redirect('/schedule')
