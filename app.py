@@ -154,7 +154,7 @@ def updateschedule( clinic_sched_id ):
 		for row in cursor.fetchall():
 			sc.append({"clinic_sched_id ": row[0], "schedule": row[1], "schedule_name": row[2]})
 		conn.close()
-		return render_template("updateschedule.html", sched = sc[0])
+		return render_template("updateschedule.html", schedule = sc[0])
 	if request.method == 'POST':
 		schedule = str(request.form["schedule"])
 		schedule_name = str(request.form["schedule_name"])
