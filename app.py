@@ -152,7 +152,7 @@ def updateschedule( clinic_sched_id ):
 	if request.method == 'GET':
 		cursor.execute("SELECT * FROM clinic_sched WHERE clinic_sched_id = %s", (str(clinic_sched_id)))
 		for row in cursor.fetchall():
-			sc.append({"clinic_sched_id ": row[0], "schedule_name": row[1], "schedule": row[2]})
+			sc.append({ "schedule_name": row[1], "schedule": row[2]})
 		conn.close()
 		return render_template("updateschedule.html", schedule = sc[0])
 	if request.method == 'POST':
