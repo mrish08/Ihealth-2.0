@@ -130,7 +130,7 @@ def schedule():
 	for row in cursor.fetchall():
 		schedule.append({"clinic_sched_id": row[0], "schedule": row[1], "schedule_name": row[2]})
 	conn.close()	
-	return render_template("schedule.html", sched = schedule)
+	return render_template("schedule.html", schedule = schedule)
 
 @app.route("/addschedule", methods = ['POST'])
 def addschedule():
