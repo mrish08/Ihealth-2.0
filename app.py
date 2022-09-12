@@ -128,7 +128,7 @@ def schedule():
 	cursor = conn.cursor()
 	cursor.execute("SELECT * FROM clinic_sched")
 	for row in cursor.fetchall():
-		sched.append({"clinic_sched_id": row[0], "schedule_name": row[1], "schedule": row[2]})
+		schedule.append({"clinic_sched_id": row[0], "schedule_name": row[1], "schedule": row[2]})
 	conn.close()	
 	return render_template("schedule.html", sched = schedule)
 
