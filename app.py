@@ -206,6 +206,39 @@ def updatemedicine(medicine_id):
 		conn.commit()
 		conn.close()
 		return redirect('/medicine')
+
+@app.route("/index/staff")
+def index():
+	return render_template("indexstaff.html")
+
+@app.route("/schedule/staff")
+def index():
+	return render_template("schedulestaff.html")
+
+@app.route("/clinic/staff")
+def index():
+	return render_template("clinicstaff.html")
+
+@app.route("/medicine/staff")
+def index():
+	return render_template("medicinestaff.html")
+
+@app.route("/index/resident")
+def index():
+	return render_template("indexresident.html")
+
+@app.route("/schedule/resident")
+def index():
+	return render_template("scheduleresident.html")
+
+@app.route("/clinic/resident")
+def index():
+	return render_template("clinicresident.html")
+
+@app.route("/medicine/resident")
+def index():
+	return render_template("medicineresident.html")
+
 		
 if __name__ == '__main__':
 	app.debug=True
