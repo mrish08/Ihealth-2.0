@@ -231,9 +231,6 @@ def vaccinationstaff():
 def dentalstaff():
 	return render_template("dentalstaff.html")
 
-
-
-
 @app.route("/indexresident")
 def indexresident():
 	return render_template("indexresident.html")
