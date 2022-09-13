@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title>BITBo | iHealth</title>
+    <title>Schedule| iHealth</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
@@ -21,11 +20,9 @@
 
 </head>
 
-<body class="loading"
-    data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+<body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
     <!-- Begin page -->
     <header>
-
     <div class="wrapper">
         <!-- ========== Left Sidebar Start ========== -->
         <div class="leftside-menu">
@@ -36,71 +33,61 @@
                     <img src="../../assets/images/ihealth-logo-with-text.png" alt="" height="40">
                 </span>
             </a>
-
             <div class="h-100" id="leftside-menu-container" data-simplebar="">
 
-                <!--- Sidemenu -->
                 <ul class="side-nav">
 
                     <li class="side-nav-title side-nav-item">Menu</li>
 
                     <li class="side-nav-item">
-                        <a href="index-staff.php" class="side-nav-link">
+                        <a href="index-resident.php" class="side-nav-link">
                             <i class="uil-chart-pie"></i>
                             <span> Dashboard </span>
                         </a>
                     </li>
 
-                    <li class="side-nav-item">
-                        <a href="schedule-staff.php" class="side-nav-link">
-                            <i class="uil-clipboard-alt"></i>
-                            <span> Schedule </span>
-                        </a>
-                    </li>
 
                     <li class="side-nav-item">
-                        <a href="vaccination-staff.php" class="side-nav-link">
+                        <a href="vaccination-resident.php" class="side-nav-link">
                             <i class="uil-syringe"></i>
                             <span> Vaccination Service</span>
                         </a>
                     </li>
 
                     <li class="side-nav-item">
-                        <a href="clinic-staff.php" class="side-nav-link">
-
+                        <a href="clinic-resident.php" class="side-nav-link">
                             <i class="uil-clipboard-alt"></i>
-
-
                             <span> Clinic Service </span>
                         </a>
                     </li>
 
                     <li class="side-nav-item">
-                        <a href="dental-staff.php" class="side-nav-link">
-
-                            
+                        <a href="dental-resident.php" class="side-nav-link">
                             <i class="mdi mdi-hospital"></i>
                             <span> Dental Service </span>
-
                         </a>
                     </li>
 
                     <li class="side-nav-item">
-
-                        <a href="medicine-staff.php" class="side-nav-link">
+                        <a href="medicine-resident.php" class="side-nav-link">
                             <i class="uil-home-alt"></i>
-                            <span>Medicine Pick-up</span>
-
-                       
+                            <span>Medicine Pick-up</span></a>
                     </li>
                 </ul>
 
+         
+            <div class="clearfix"></div>
+
+                </div>
+                <!-- Sidebar -left -->
+
             </div>
-            <!-- Sidebar -left -->
+            <!-- Left Sidebar End -->
 
         </div>
+        <!-- END wrapper -->
 </header>
-
+   
  <div class="wrapper">
 
         <div class="content-page">
@@ -109,21 +96,18 @@
                 <div class="navbar-custom">
                     <ul class="list-unstyled topbar-menu float-end mb-0">
                         <li class="dropdown notification-list d-lg-none">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
-                                role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="dripicons-search noti-icon"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
                                 <form class="p-3">
-                                    <input type="text" class="form-control" placeholder="Search ..."
-                                        aria-label="Recipient's username">
+                                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
                                 </form>
                             </div>
                         </li>
 
                         <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
-                                role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="dripicons-bell noti-icon"></i>
                                 <span class="noti-icon-badge"></span>
                             </a>
@@ -153,10 +137,9 @@
                                     </a>
 
                                     <!-- item-->
-                                    <a href="blotter.html" class="dropdown-item notify-item">
+                                    <a href="blotter.php" class="dropdown-item notify-item">
                                         <div class="notify-icon">
-                                            <img src="../../assets/images/users/profile1.png"
-                                                class="img-fluid rounded-circle" alt="">
+                                            <img src="../../assets/images/users/profile1.png" class="img-fluid rounded-circle" alt="">
                                         </div>
                                         <p class="notify-details">Juan Dela Cruz</p>
                                         <p class="text-muted mb-0 user-msg">
@@ -165,10 +148,9 @@
                                     </a>
 
                                     <!-- item-->
-                                    <a href="blotter.html" class="dropdown-item notify-item">
+                                    <a href="blotter.php" class="dropdown-item notify-item">
                                         <div class="notify-icon">
-                                            <img src="../../assets/images/users/profile2.png"
-                                                class="img-fluid rounded-circle" alt="">
+                                            <img src="../../assets/images/users/profile2.png" class="img-fluid rounded-circle" alt="">
                                         </div>
                                         <p class="notify-details">Maria Clara</p>
                                         <p class="text-muted mb-0 user-msg">
@@ -179,8 +161,7 @@
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <div class="notify-icon">
-                                            <img src="../../assets/images/users/profile3.png"
-                                                class="img-fluid rounded-circle" alt="">
+                                            <img src="../../assets/images/users/profile3.png" class="img-fluid rounded-circle" alt="">
                                         </div>
                                         <p class="notify-details">Sisa Usisa</p>
                                         <p class="text-muted mb-0 user-msg">
@@ -190,8 +171,7 @@
                                 </div>
 
                                 <!-- All-->
-                                <a href="javascript:void(0);"
-                                    class="dropdown-item text-center text-primary notify-item notify-all">
+                                <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
                                     View All
                                 </a>
 
@@ -199,39 +179,36 @@
                         </li>
 
                         <li class="notification-list">
-                            <a class="nav-link" href="../../BITBo/admin/index.html">
+                            <a class="nav-link" href="../../BITBo/admin/index.php">
                                 <i class="noti-icon"><button type="button" class="btn btn-primary">Switch to
                                         <strong>BITBo.</strong></button></i>
                             </a>
                         </li>
 
                         <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown"
-                                href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <span class="account-user-avatar">
-                                    <img src="../../assets/images/users/profile1.png" alt="user-image"
-                                        class="rounded-circle">
+                                    <img src="../../assets/images/users/profile1.png" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
                                     <span class="account-user-name">Juan Dela Cruz</span>
-                                    <span class="account-position">Admin</span>
+                                    <span class="account-position">Resident</span>
                                 </span>
                             </a>
-                            <div
-                                class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
                                 <!-- item-->
                                 <div class=" dropdown-header noti-title">
                                     <h6 class="text-overflow m-0">Welcome !</h6>
                                 </div>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="myaccount-resident.php" class="dropdown-item notify-item">
                                     <i class="mdi mdi-account-circle me-1"></i>
                                     <span>My Account</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="/BITBo/login-admin.html" class="dropdown-item notify-item">
+                                <a href="/BITBo/login-admin.php" class="dropdown-item notify-item">
                                     <i class="mdi mdi-logout me-1"></i>
                                     <span>Logout</span>
                                 </a>
@@ -259,9 +236,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle"
-                                            src="../../assets/images/users/profile1.png" alt="Generic placeholder image"
-                                            height="32">
+                                        <img class="d-flex me-2 rounded-circle" src="../../assets/images/users/profile1.png" alt="Generic placeholder image" height="32">
                                         <div class="w-100">
                                             <h5 class="m-0 font-14">Juan Dela Cruz</h5>
                                             <span class="font-12 mb-0">Brgy. Official</span>
@@ -272,9 +247,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle"
-                                            src="../../assets/images/users/profile2.png" alt="Generic placeholder image"
-                                            height="32">
+                                        <img class="d-flex me-2 rounded-circle" src="../../assets/images/users/profile2.png" alt="Generic placeholder image" height="32">
                                         <div class="w-100">
                                             <h5 class="m-0 font-14">Maria Clara</h5>
                                             <span class="font-12 mb-0">Helpdesk</span>
@@ -285,9 +258,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle"
-                                            src="../../assets/images/users/profile3.png" alt="Generic placeholder image"
-                                            height="32">
+                                        <img class="d-flex me-2 rounded-circle" src="../../assets/images/users/profile3.png" alt="Generic placeholder image" height="32">
                                         <div class="w-100">
                                             <h5 class="m-0 font-14">Sisa Usisa</h5>
                                             <span class="font-12 mb-0">Staff</span>
@@ -312,73 +283,92 @@
                         </div>
 
                         <!-- end page title -->
-    
-               
 
 
-                    <!-- start table content -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-body">
+
+
+                        <!-- start table content -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
                                     <div class="tab-content">
 
-                                       
-									
-							
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
-                            </div><!-- end col-->
 
-                         
-                  
-                        </div><!-- end row-->
+                                        <div class="card-body">
+                                            <tbody>
+                                            <tr>
+                                            <div>
+                                            <td class="col-sm-6">
+                                                                <label for="example-date" class="form-label">Date<span style="color:#ff0000">*</span></label>
+                                                                <input class="form-control" id="example-date" type="date" name="date">
+                                                            
+                                                </td>
+                                                </div>
+                                                <div>
+                                                <td class="col-sm-6">
+                                                    
+                                                    <label for="example-select" class="form-label">Time <span style="color:#ff0000">*</span></label>
+                                                                <select class="form-select" id="example-select">
+                                                                <option>A.M</option>
+                                                                <option>P.M</option>
+                                                                </select>
+                                                </td></div><br>
+                                                <div>
+                                                <td>
+                                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                                </td>
+                                                </div>
+                                            </tr>
+                                            </tbody>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Edit Details Modal -->
+                        </div> <!-- container -->
+                    </div><!-- content -->
 
-                        <!--MODALS-->
+                </div>
 
-                        
-                    </div> <!-- container -->
-                </div><!-- content -->
+                <!-- ============================================================== -->
+                <!-- End Page content -->
+                <!-- ============================================================== -->
 
             </div>
+            </div>
+            </div>
+            <!-- END wrapper -->
 
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
+            <!-- bundle -->
+            <script src="../../assets/js/vendor.min.js"></script>
+            <script src="../../assets/js/app.min.js"></script>
 
-        </div>
-        <!-- END wrapper -->
+            <!-- third party js -->
+            <script src="../../assets/js/vendor/jquery.dataTables.min.js"></script>
+            <script src="../../assets/js/vendor/dataTables.bootstrap5.js"></script>
+            <script src="../../assets/js/vendor/dataTables.responsive.min.js"></script>
+            <script src="../../assets/js/vendor/responsive.bootstrap5.min.js"></script>
+            <script src="../../assets/js/vendor/dataTables.buttons.min.js"></script>
+            <script src="../../assets/js/vendor/buttons.bootstrap5.min.js"></script>
+            <script src="../../assets/js/vendor/buttons.php5.min.js"></script>
+            <script src="../../assets/js/vendor/buttons.flash.min.js"></script>
+            <script src="../../assets/js/vendor/buttons.print.min.js"></script>
+            <script src="../../assets/js/vendor/dataTables.keyTable.min.js"></script>
+            <script src="../../assets/js/vendor/dataTables.select.min.js"></script>
+            <script src="../../assets/js/vendor/apexcharts.min.js"></script>
+            <script src="../../assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+            <script src="../../assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+            <script src="../../assets/js/vendor/dropzone.min.js"></script>
+            <script src="../../assets/js/vendor/list.min.js"></script>
+            <!-- third party js ends -->
 
-        <!-- bundle -->
-        <script src="../../assets/js/vendor.min.js"></script>
-        <script src="../../assets/js/app.min.js"></script>
-
-        <!-- third party js -->
-        <script src="../../assets/js/vendor/jquery.dataTables.min.js"></script>
-        <script src="../../assets/js/vendor/dataTables.bootstrap5.js"></script>
-        <script src="../../assets/js/vendor/dataTables.responsive.min.js"></script>
-        <script src="../../assets/js/vendor/responsive.bootstrap5.min.js"></script>
-        <script src="../../assets/js/vendor/dataTables.buttons.min.js"></script>
-        <script src="../../assets/js/vendor/buttons.bootstrap5.min.js"></script>
-        <script src="../../assets/js/vendor/buttons.html5.min.js"></script>
-        <script src="../../assets/js/vendor/buttons.flash.min.js"></script>
-        <script src="../../assets/js/vendor/buttons.print.min.js"></script>
-        <script src="../../assets/js/vendor/dataTables.keyTable.min.js"></script>
-        <script src="../../assets/js/vendor/dataTables.select.min.js"></script>
-        <script src="../../assets/js/vendor/apexcharts.min.js"></script>
-        <script src="../../assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
-        <script src="../../assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
-        <script src="../../assets/js/vendor/dropzone.min.js"></script>
-        <script src="../../assets/js/vendor/list.min.js"></script>
-        <!-- third party js ends -->
-
-        <!-- demo app -->
-        <script src="../../assets/js/pages/demo.datatable-init.js"></script>
-        <script src="../../assets/js/pages/demo.toastr.js"></script>
-        <script src="../../assets/js/pages/demo.datatable-init.js"></script>
-        <script src="../../assets/js/pages/demo.toastr.js"></script>
-        <script src="../../assets/js/pages/list.js"></script>
-        <!-- end demo js-->
+            <!-- demo app -->
+            <script src="../../assets/js/pages/demo.datatable-init.js"></script>
+            <script src="../../assets/js/pages/demo.toastr.js"></script>
+            <script src="../../assets/js/pages/demo.datatable-init.js"></script>
+            <script src="../../assets/js/pages/demo.toastr.js"></script>
+            <script src="../../assets/js/pages/list.js"></script>
+            <!-- end demo js-->
 </body>
 
 </html>
