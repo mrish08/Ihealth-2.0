@@ -207,35 +207,43 @@ def updatemedicine(medicine_id):
 		conn.close()
 		return redirect('/medicine')
 
-@app.route("/index/staff")
+@app.route("/indexstaff")
 def indexstaff():
 	return render_template("indexstaff.html")
 
-@app.route("/schedule/staff")
+@app.route("/schedulestaff")
 def schedulestaff():
 	return render_template("schedulestaff.html")
 
-@app.route("/clinic/staff")
+@app.route("/clinicstaff")
 def clinicstaff():
 	return render_template("clinicstaff.html")
 
-@app.route("/medicine/staff")
+@app.route("/medicinestaff")
 def medicinestaff():
 	return render_template("medicinestaff.html")
 
-@app.route("/index/resident")
+@app.route("/indexresident")
 def indexresident():
 	return render_template("indexresident.html")
 
-@app.route("/schedule/resident")
+@app.route("/scheduleresident")
 def scheduleresident():
 	return render_template("scheduleresident.html")
 
-@app.route("/clinic/resident")
+@app.route("/dentalresident")
+def dentalresident():
+	return render_template("dentalresident.html")
+
+@app.route("/vaccinationresident")
+def vaccinationresident():
+	return render_template("vaccinationresident.html")
+
+@app.route("/clinicresident")
 def clinicresident():
 	return render_template("clinicresident.html")
 
-@app.route("/medicine/resident")
+@app.route("/medicineresident")
 def medicineresident():
 	return render_template("medicineresident.html")
 
