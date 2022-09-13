@@ -231,29 +231,7 @@ def vaccinationstaff():
 def dentalstaff():
 	return render_template("dentalstaff.html")
 
-@app.route("/indexresident")
-def indexresident():
-	return render_template("indexresident.html")
 
-@app.route("/scheduleresident")
-def scheduleresident():
-	return render_template("scheduleresident.html")
-
-@app.route("/dentalresident")
-def dentalresident():
-	return render_template("dentalresident.html")
-
-@app.route("/vaccinationresident")
-def vaccinationresident():
-	return render_template("vaccinationresident.html")
-
-@app.route("/clinicresident")
-def clinicresident():
-	return render_template("clinicresident.html")
-
-@app.route("/medicineresident")
-def medicineresident():
-	return render_template("medicineresident.html")
 
 if __name__ == '__main__':
 	app.debug=True
