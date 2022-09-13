@@ -208,35 +208,35 @@ def updatemedicine(medicine_id):
 		return redirect('/medicine')
 
 @app.route("/index/staff")
-def index():
+def indexstaff():
 	return render_template("indexstaff.html")
 
 @app.route("/schedule/staff")
-def index():
+def schedulestaff():
 	return render_template("schedulestaff.html")
 
 @app.route("/clinic/staff")
-def index():
+def clinicstaff():
 	return render_template("clinicstaff.html")
 
 @app.route("/medicine/staff")
-def index():
+def medicinestaff():
 	return render_template("medicinestaff.html")
 
 @app.route("/index/resident")
-def index():
+def indexresident():
 	return render_template("indexresident.html")
 
 @app.route("/schedule/resident")
-def index():
+def scheduleresident():
 	return render_template("scheduleresident.html")
 
 @app.route("/clinic/resident")
-def index():
+def clinicresident():
 	return render_template("clinicresident.html")
 
 @app.route("/medicine/resident")
-def index():
+def medicineresident():
 	return render_template("medicineresident.html")
 
 if __name__ == '__main__':
