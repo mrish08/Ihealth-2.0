@@ -223,6 +223,14 @@ def clinicstaff():
 def medicinestaff():
 	return render_template("medicinestaff.html")
 
+@app.route("/vaccinationstaff")
+def vaccinationstaff():
+	return render_template("vaccinationstaff.html")
+
+
+
+
+
 @app.route("/indexresident")
 def indexresident():
 	return render_template("indexresident.html")
