@@ -15,4 +15,3 @@ with sshtunnel.SSHTunnelForwarder(
         database='iHealth_database',
     )
     # Do stuff
-    connection.close()
