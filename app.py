@@ -1,7 +1,6 @@
 from distutils.log import debug
 from flask import Flask, render_template,request, redirect,flash, url_for, session, logging
 import os
-import sshtunnel
 import psycopg2
 
 app=Flask(__name__,template_folder='template',static_folder='static')
@@ -256,5 +255,6 @@ def clinicresident():
 def medicineresident():
 	return render_template("medicineresident.html")
 
-app.debug=True
-app.run(debug=True)
+if __name__== '__main__':
+ app.debug=True
+ app.run(debug=True)
