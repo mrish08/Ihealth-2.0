@@ -212,17 +212,15 @@ def indexstaff():
 
 @app.route("/loginsta")
 def indexstaff():
-	return render_template("indexstaff.html")
+	return render_template("loginstaff.html")
 
 @app.route("/loginres")
 def indexstaff():
-	return render_template("indexstaff.html")
+	return render_template("loginresident.html")
 
 @app.route("/register")
 def indexstaff():
-	return render_template("indexstaff.html")
-
-
+	return render_template("register.html")
 
 @app.route("/indexstaff")
 def indexstaff():
