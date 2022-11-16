@@ -207,7 +207,7 @@ def updatemedicine(medicine_id):
 		conn.close()
 		return redirect('/medicine')
 
-@app.route("/logina")
+@app.route("/loginadmin")
 def loginadmin():
 	return render_template("loginadmin.html")
 
