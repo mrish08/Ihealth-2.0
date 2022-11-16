@@ -210,7 +210,7 @@ def updatemedicine(medicine_id):
 def indexstaff():
 	return render_template("loginadmin.html")
 
-@app.route("/loginsta")
+@app.route("/loginstaff")
 def indexstaff():
 	return render_template("loginstaff.html")
 
