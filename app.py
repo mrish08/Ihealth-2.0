@@ -206,20 +206,21 @@ def updatemedicine(medicine_id):
 		conn.commit()
 		conn.close()
 		return redirect('/medicine')
+
 @app.route("/logina")
-def indexstaff():
+def loginadmin():
 	return render_template("loginadmin.html")
 
 @app.route("/loginstaff")
-def indexstaff():
+def loginstaff():
 	return render_template("loginstaff.html")
 
-@app.route("/loginres")
-def indexstaff():
+@app.route("/loginresident")
+def loginresident():
 	return render_template("loginresident.html")
 
 @app.route("/register")
-def indexstaff():
+def register():
 	return render_template("register.html")
 
 @app.route("/indexstaff")
