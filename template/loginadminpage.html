@@ -5,14 +5,14 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>iHealth - Login Admin</title>
+  <title>RxClinic - Login Admin</title>
   <meta content="" name="description">
 
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="../../static/images/rxclinic_logo_1.png" rel="icon">
-  <link href="../../static/images/rxclinic_logo_1.png" rel="apple-touch-icon">
+  <link href="assets/img/rxclinic_logo_1.png" rel="icon">
+  <link href="assets/img/rxclinic_logo_1.png" rel="apple-touch-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Google Fonts -->
@@ -20,15 +20,15 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="../../static/js/vendor/aos/aos.css" rel="stylesheet">
-  <link href="../../static/js/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../../static/js/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../../static/js/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="../../static/js/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="../../static/js/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="../../static/css/style.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: FlexStart - v1.9.0
@@ -44,8 +44,8 @@
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="" class="logo d-flex align-items-center">
-        <img src="../../static/images/bitbo-logo-with-text-blue.png" alt="" height="40">
+      <a href="landingpage.html" class="logo d-flex align-items-center">
+        <img src="assets/img/rxlogowithname.png" alt="">
       </a>
       
       <nav id="navbar" class="navbar">
@@ -58,14 +58,14 @@
           <li><a class="nav-link scrollto" href="#contact">CONTACT</a></li> -->
           <li class="dropdown"><a href="#"><span>LOG IN</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="/loginres">Member</a></li>
-              <li><a href="/loginsta">Doctor</a></li>
-              <li><a href="/logina">Admin</a></li>
+              <li><a href="landingpagelogin.html">Member</a></li>
+              <li><a href="logindoctorpage.html">Doctor</a></li>
+              <li><a href="loginadminpage.html">Admin</a></li>
             </ul>
           </li>
-          <li><a class="getstarted scrollto" href="">SIGN IN</a></li>
-          <li><a class="getstarted scrollto" href="/register"><i class="bi bi-person-plus-fill"></i>&nbsp;REGISTER
-              </a></li>
+          <li><a class="getstarted scrollto" href="landingpage.html">SIGN IN</a></li>
+          <li><a class="getstarted scrollto" href="addadmin.html"><i class="bi bi-person-plus-fill"></i>&nbsp;ADD
+              ADMIN</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -79,7 +79,7 @@
     <div class="container" data-aos="fade-up">
       <div class="row">
         <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-          <img src="../../static/images/admin.jpg" class="img-fluid" alt="">
+          <img src="assets/img/admin.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
           <div class="card border-0 shadow rounded-3 my-5">
@@ -93,9 +93,39 @@
                   <label for="floatingInput">Email address</label>
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="floatingInput" placeholder="Password">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                   <label for="floatingInput">Password</label>
                 </div>
+                <!-- <div class="row mb-4">
+                  <div class="col d-flex justify-content-center">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                      <label class="form-check-label" for="form2Example31"> Remember me </label>
+                    </div>
+                  </div>
+              
+                  <div class="col">
+                    <a href="#!">Forgot password?</a>
+                  </div>
+                </div> -->
+
+                <!-- <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+                </div> -->
+
+                <!-- <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                  <label class="form-check-label" for="rememberPasswordCheck">By proceeding, you agree with RxClinic's
+                    <a href="termsofconditions.php">Terms & Conditions</a> and <a href="termsofconditions.php">Data Privacy Policy</a>
+                  </label>
+                </div> -->
+
+                <!-- <form action="?" method="POST">
+                  <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+                  <br/>
+                  <script src="https://www.google.com/recaptcha/api.js"></script>
+                </form> -->
 
                 <div class="d-grid">
                   <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">
@@ -104,7 +134,7 @@
                 </div>
                 <!-- <br>
                 <div class="text-center">
-                  <p>Not a member? <a href="landingpage.php">Register</a></p>
+                  <p>Not a member? <a href="landingpage.html">Register</a></p>
                 </div>
 
                 <hr class="my-4">
@@ -141,7 +171,7 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-        Designed by <a href="">RxClinic Group</a>
+        Designed by <a href="landingpage.html">RxClinic Group</a>
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -150,16 +180,16 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="../../static/js/vendor/purecounter/purecounter.js"></script>
-  <script src="../../static/js/vendor/aos/aos.js"></script>
-  <script src="../../static/js/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../../static/js/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../../static/js/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="../../static/js/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="../../static/js/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="../../static/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 
