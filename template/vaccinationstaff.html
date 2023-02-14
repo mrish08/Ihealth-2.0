@@ -3,21 +3,26 @@
 
 <head>
     <meta charset="utf-8">
-    <title>BITBo | iHealth</title>
+    <title>Vaccination Service | iHealth Staff</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
-   <!-- App favicon -->
-   <link rel="shortcut icon" href="../../static/images/brgyms-icon-white.png">
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="../../static/images/brgyms-icon-white.png">
 
-   <!-- third party css -->
-   <link href="../../static/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
-   <!-- third party css end -->
+    <!-- third party css -->
+    <link href="../../static/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css">
+    <!-- third party css end -->
 
-   <!-- App css -->
-   <link href="../../static/css/icons.min.css" rel="stylesheet" type="text/css">
-   <link href="../../static/css/app-i.min.css" rel="stylesheet" type="text/css" id="light-style">
-   <link href="../../static/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
+    <!-- App css -->
+    <link href="../../static/css/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="../../static/css/app-i.min.css" rel="stylesheet" type="text/css" id="light-style">
+    <link href="../../static/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
+
+    <!-- Datatables css -->
+    <link href="../../static/css/vendor/select.bootstrap5.css" rel="stylesheet" type="text/css" />
+    <link href="../../static/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css" />
+    <link href="../../static/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -26,15 +31,18 @@
     <!-- Begin page -->
     <header>
 
-    <div class="wrapper">
-        <!-- ========== Left Sidebar Start ========== -->
-        <div class="leftside-menu">
+        <div class="wrapper">
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="leftside-menu">
 
             <!-- LOGO -->
-            <a href="admin-index.php" class="logo text-center logo-light">
-                <span class="logo-lg">
-                    <img src="../../static/images/ihealth-logo-with-text.png" alt="" height="40">
-                </span>
+           <a href="/index" class="logo text-center logo-light">
+            <span class="logo-lg">
+                <img src="../../static/images/ihealth-logo-with-text.png" alt="" height="40">
+            </span>
+            <span class="logo-sm">
+                <img src="../../static/images/bitbo.png" alt="" height="32">
+            </span>
             </a>
 
             <div class="h-100" id="leftside-menu-container" data-simplebar="">
@@ -58,7 +66,7 @@
                         </a>
                     </li>
 
-                    <li class="side-nav-item">
+                    <li class="badge-primary-lighten side-nav-item menuitem-active">
                         <a href="/vaccinationstaff" class="side-nav-link">
                             <i class="uil-syringe"></i>
                             <span> Vaccination Service</span>
@@ -84,18 +92,40 @@
                         <a href="/medicinestaff" class="side-nav-link">
                             <i class="uil-home-alt"></i>
                             <span>Medicine Pick-up</span></a>
+                    </li>
 
-                       
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
+                            <i class="mdi mdi-history"></i>
+                            <span> Appointment History </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarEmail">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="/staffhaptvax">Vaccination Service</a>
+                                </li>
+                                <li>
+                                    <a href="/staffhaptclinic">Clinic Service</a>
+                                </li>
+                                <li>
+                                    <a href="/staffhaptdental">Dental Service</a>
+                                </li>
+                                <li>
+                                    <a href="/staffhaptmedicine">Medicine Pickup</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
 
             </div>
             <!-- Sidebar -left -->
 
-        </div>
-</header>
+            </div>
+    </header>
 
- <div class="wrapper">
+    <div class="wrapper">
 
         <div class="content-page">
             <div class="content">
@@ -103,117 +133,36 @@
                 <div class="navbar-custom">
                     <ul class="list-unstyled topbar-menu float-end mb-0">
                         <li class="dropdown notification-list d-lg-none">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="dripicons-search noti-icon"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
                                 <form class="p-3">
-                                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                    <input type="text" class="form-control" placeholder="Search ..."
+                                        aria-label="Recipient's username">
                                 </form>
                             </div>
                         </li>
 
                         <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="dripicons-bell noti-icon"></i>
-                                <span class="noti-icon-badge"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg">
-
-                                <!-- item-->
-                                <div class="dropdown-item noti-title">
-                                    <h5 class="m-0">
-                                        <span class="float-end">
-                                            <a href="javascript: void(0);" class="text-dark">
-                                                <small>Clear All</small>
-                                            </a>
-                                        </span>Notification
-                                    </h5>
-                                </div>
-
-                                <div style="max-height: 230px;" data-simplebar="">
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-info">
-                                            <i class="mdi mdi-account-plus"></i>
-                                        </div>
-                                        <p class="notify-details">New user registered.
-                                            <small class="text-muted">5 hours ago</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="blotter.html" class="dropdown-item notify-item">
-                                        <div class="notify-icon">
-                                            <img src="../../static/images/users/profile1.png" class="img-fluid rounded-circle" alt="">
-                                        </div>
-                                        <p class="notify-details">Juan Dela Cruz</p>
-                                        <p class="text-muted mb-0 user-msg">
-                                            <small>Requested a vaccination.</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="blotter.html" class="dropdown-item notify-item">
-                                        <div class="notify-icon">
-                                            <img src="../../static/images/users/profile2.png" class="img-fluid rounded-circle" alt="">
-                                        </div>
-                                        <p class="notify-details">Maria Clara</p>
-                                        <p class="text-muted mb-0 user-msg">
-                                            <small>Requested a booster.</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon">
-                                            <img src="../../static/images/users/profile3.png" class="img-fluid rounded-circle" alt="">
-                                        </div>
-                                        <p class="notify-details">Sisa Usisa</p>
-                                        <p class="text-muted mb-0 user-msg">
-                                            <small>Requested a vaccine.</small>
-                                        </p>
-                                    </a>
-                                </div>
-
-                                <!-- All-->
-                                <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
-                                    View All
-                                </a>
-
-                            </div>
-                        </li>
-
-                        <li class="notification-list">
-                            <a class="nav-link" href="../../BITBo/admin/index.html">
-                                <i class="noti-icon"><button type="button" class="btn btn-primary">Switch to
-                                        <strong>BITBo.</strong></button></i>
-                            </a>
-                        </li>
-
-                        <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown"
+                                href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <span class="account-user-avatar">
                                     <img src="../../static/images/users/profile1.png" alt="user-image"
                                         class="rounded-circle">
                                 </span>
                                 <span>
                                     <span class="account-user-name">Juan Dela Cruz</span>
-                                <span class="account-position">Admin</span>
+                                    <span class="account-position">Staff</span>
                                 </span>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                            <div
+                                class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
                                 <!-- item-->
                                 <div class=" dropdown-header noti-title">
                                     <h6 class="text-overflow m-0">Welcome !</h6>
                                 </div>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-account-circle me-1"></i>
-                                    <span>My Account</span>
-                                </a>
 
                                 <!-- item-->
                                 <a href="/BITBo/login-admin.html" class="dropdown-item notify-item">
@@ -244,7 +193,9 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="../../static/images/users/profile1.png" alt="Generic placeholder image" height="32">
+                                        <img class="d-flex me-2 rounded-circle"
+                                            src="../../static/images/users/profile1.png" alt="Generic placeholder image"
+                                            height="32">
                                         <div class="w-100">
                                             <h5 class="m-0 font-14">Juan Dela Cruz</h5>
                                             <span class="font-12 mb-0">Brgy. Official</span>
@@ -255,7 +206,9 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="../../static/images/users/profile2.png" alt="Generic placeholder image" height="32">
+                                        <img class="d-flex me-2 rounded-circle"
+                                            src="../../static/images/users/profile2.png" alt="Generic placeholder image"
+                                            height="32">
                                         <div class="w-100">
                                             <h5 class="m-0 font-14">Maria Clara</h5>
                                             <span class="font-12 mb-0">Helpdesk</span>
@@ -266,7 +219,9 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="../../static/images/users/profile3.png" alt="Generic placeholder image" height="32">
+                                        <img class="d-flex me-2 rounded-circle"
+                                            src="../../static/images/users/profile3.png" alt="Generic placeholder image"
+                                            height="32">
                                         <div class="w-100">
                                             <h5 class="m-0 font-14">Sisa Usisa</h5>
                                             <span class="font-12 mb-0">Staff</span>
@@ -292,282 +247,94 @@
                     </div>
                     <!-- end page title -->
 
-                    <!-- start table content -->
-                    <div class="tab-content">
-                        <!-- First Tab -->
-                        <div class="tab-pane show active" id="pending">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="tab-content">
+                                        <div class="table-hover" id="scroll-horizontal-preview">
+                                            <table id="scroll-horizontal-datatable" style="overflow-x: auto;" class="table table-hover w-100 nowrap">
+                                                <thead>
+                                                    <tr class="table-light">
+                                                        <th>Appointment ID</th>
+                                                        <th>Service</th>
+                                                        <th>Name</th>
+                                                        <th>Date</th>
+                                                        <th>Time</th>
+                                                        <th>Status</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for vaccinationstaff in vaccinationstaff %}
+                                                    <tr>
+                                                        <td>{{ vaccinationstaff.appt_id}}</td>
+                                                        <td>{{ vaccinationstaff.appt_type}}</td>
+                                                        <td>{{ vaccinationstaff.remarks}}</td>
+                                                        <td>{{ vaccinationstaff.date}}</td>
+                                                        <td>{{ vaccinationstaff.time}}</td>
+                                                        <td>{{ vaccinationstaff.status}}</td>
+                                                        <td>
+                                                            <a href="edit-vaxstaff.html"><button" class="btn btn-outline-info btn-rounded" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" title="Edit">
+                                                                <i class="mdi mdi-circle-edit-outline"></i></button></a>
+                                                            <button type="button" class="btn btn-outline-success btn-rounded" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" title="Accept">
+                                                                <i class="dripicons-checkmark"></i></button>
+                                                            <button type="button" class="btn btn-outline-danger btn-rounded" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover" title="Decline">
+                                                                <i class="mdi mdi-window-close"></i></button>
+                                                    </tr>
 
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="row mb-2">
-                                                <div class="col-xl-8">
-                                                    <form class="row gy-2 gx-2 align-items-center justify-content-xl-start justify-content-between">
-                                                        <div class="col-auto">
-                                                            <label for="inputPassword2" class="visually-hidden">Search</label>
-                                                            <input type="search" class="form-control" id="inputPassword2" placeholder="Search..."> <br><br>
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>   
+                                        </div>                        
+                                    </div> <!-- end preview-->
+                                </div> <!-- end tab-content-->
 
-                                                <div class="table-responsive">
-                                                    <table class="table table-centered mb-0">
-                                                        <thead class="table-light">
-                                                            <tr>
-                                                                <th>Appointment ID</th>
-                                                                <th>Name</th>
-                                                                <th>Date</th>
-                                                                <th>Time</th>
-                                                                <th>Status</th>
-                                                                <th style="width: 125px;">Action</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td><a href="apps-ecommerce-orders-details.html" class="text-body fw-bold">VA-0001</a> </td>
-                                                                <td> Maria Leonora Teresa </td>
-
-                                                                <td>September 17 2022</td>
-                                                                </td>
-                                                                <td>
-                                                                    time
-                                                                </td>
-                                                                <td>
-                                                                    <span class="badge badge-info-lighten rounded-pill">Pending</span>
-                                                                </td>
-                                                                <td>
-                                                                    <button type="button" class="btn btn-outline-success btn-rounded"><i class="dripicons-checkmark"></i></button>
-                                                                    <button type="button" class="btn btn-outline-danger btn-rounded"><i class="mdi mdi-delete"></i></button>
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td><a href="apps-ecommerce-orders-details.html" class="text-body fw-bold">VA-0002</a> </td>
-                                                                <td> Maria Leonora Teresa </td>
-
-                                                                <td>September 17 2022</td>
-                                                                </td>
-                                                                <td>
-                                                                    time
-                                                                </td>
-                                                                <td>
-                                                                    <span class="badge badge-info-lighten rounded-pill">Pending</span>
-                                                                </td>
-                                                                <td>
-                                                                    <button type="button" class="btn btn-outline-success btn-rounded"><i class="dripicons-checkmark"></i></button>
-                                                                    <button type="button" class="btn btn-outline-danger btn-rounded"><i class="mdi mdi-delete"></i></button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="apps-ecommerce-orders-details.html" class="text-body fw-bold">VA-0003</a> </td>
-                                                                <td> Maria Leonora Teresa </td>
-
-                                                                <td>September 17 2022</td>
-                                                                </td>
-                                                                <td>
-                                                                    time
-                                                                </td>
-                                                                <td>
-                                                                    <span class="badge badge-info-lighten rounded-pill">Pending</span>
-                                                                </td>
-                                                                <td>
-                                                                    <button type="button" class="btn btn-outline-success btn-rounded"><i class="dripicons-checkmark"></i></button>
-                                                                    <button type="button" class="btn btn-outline-danger btn-rounded"><i class="mdi mdi-delete"></i></button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="apps-ecommerce-orders-details.html" class="text-body fw-bold">VA-0004</a> </td>
-                                                                <td> Maria Leonora Teresa </td>
-
-                                                                <td>September 17 2022</td>
-                                                                </td>
-                                                                <td>
-                                                                    time
-                                                                </td>
-                                                                <td>
-                                                                    <span class="badge badge-info-lighten rounded-pill">Pending</span>
-                                                                </td>
-                                                                <td>
-                                                                    <button type="button" class="btn btn-outline-success btn-rounded"><i class="dripicons-checkmark"></i></button>
-                                                                    <button type="button" class="btn btn-outline-danger btn-rounded"><i class="mdi mdi-delete"></i></button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="apps-ecommerce-orders-details.html" class="text-body fw-bold">VA-0005</a> </td>
-                                                                <td> Maria Leonora Teresa </td>
-
-                                                                <td>September 17 2022</td>
-                                                                </td>
-                                                                <td>
-                                                                    time
-                                                                </td>
-                                                                <td>
-                                                                    <span class="badge badge-info-lighten rounded-pill">Pending</span>
-                                                                </td>
-                                                                <td>
-                                                                    <button type="button" class="btn btn-outline-success btn-rounded"><i class="dripicons-checkmark"></i></button>
-                                                                    <button type="button" class="btn btn-outline-danger btn-rounded"><i class="mdi mdi-delete"></i></button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="apps-ecommerce-orders-details.html" class="text-body fw-bold">VA-0006</a> </td>
-                                                                <td> Maria Leonora Teresa </td>
-
-                                                                <td>September 17 2022</td>
-                                                                </td>
-                                                                <td>
-                                                                    time
-                                                                </td>
-                                                                <td>
-                                                                    <span class="badge badge-info-lighten rounded-pill">Pending</span>
-                                                                </td>
-                                                                <td>
-                                                                    <button type="button" class="btn btn-outline-success btn-rounded"><i class="dripicons-checkmark"></i></button>
-                                                                    <button type="button" class="btn btn-outline-danger btn-rounded"><i class="mdi mdi-delete"></i></button>
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td><a href="apps-ecommerce-orders-details.html" class="text-body fw-bold">VA-0007</a> </td>
-                                                                <td> Maria Leonora Teresa </td>
-
-                                                                <td>September 17 2022</td>
-                                                                </td>
-                                                                <td>
-                                                                    time
-                                                                </td>
-                                                                <td>
-                                                                    <span class="badge badge-info-lighten rounded-pill">Pending</span>
-                                                                </td>
-                                                                <td>
-                                                                    <button type="button" class="btn btn-outline-success btn-rounded"><i class="dripicons-checkmark"></i></button>
-                                                                    <button type="button" class="btn btn-outline-danger btn-rounded"><i class="mdi mdi-delete"></i></button>
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <td><a href="apps-ecommerce-orders-details.html" class="text-body fw-bold">VA-0008</a> </td>
-                                                                <td> Maria Leonora Teresa </td>
-
-                                                                <td>September 17 2022</td>
-                                                                </td>
-                                                                <td>
-                                                                    time
-                                                                </td>
-                                                                <td>
-                                                                    <span class="badge badge-info-lighten rounded-pill">Pending</span>
-                                                                </td>
-                                                                <td>
-                                                                    <button type="button" class="btn btn-outline-success btn-rounded"><i class="dripicons-checkmark"></i></button>
-                                                                    <button type="button" class="btn btn-outline-danger btn-rounded"><i class="mdi mdi-delete"></i></button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="apps-ecommerce-orders-details.html" class="text-body fw-bold">VA-0009</a> </td>
-                                                                <td> Maria Leonora Teresa </td>
-
-                                                                <td>September 17 2022</td>
-                                                                </td>
-                                                                <td>
-                                                                    time
-                                                                </td>
-                                                                <td>
-                                                                    <span class="badge badge-info-lighten rounded-pill">Pending</span>
-                                                                </td>
-                                                                <td>
-                                                                    <button type="button" class="btn btn-outline-success btn-rounded"><i class="dripicons-checkmark"></i></button>
-                                                                    <button type="button" class="btn btn-outline-danger btn-rounded"><i class="mdi mdi-delete"></i></button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="apps-ecommerce-orders-details.html" class="text-body fw-bold">VA-0010</a> </td>
-                                                                <td> Maria Leonora Teresa </td>
-
-                                                                <td>September 17 2022</td>
-                                                                </td>
-                                                                <td>
-                                                                    time
-                                                                </td>
-                                                                <td>
-                                                                    <span class="badge badge-info-lighten rounded-pill">Pending</span>
-                                                                </td>
-                                                                <td>
-                                                                    <button type="button" class="btn btn-outline-success btn-rounded"><i class="dripicons-checkmark"></i></button>
-                                                                    <button type="button" class="btn btn-outline-danger btn-rounded"><i class="mdi mdi-delete"></i></button>
-                                                                </td>
-                                                            </tr>
-
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                            <!-- end card-body-->
-                                        </div>
-                                        <!-- end card-->
-                                    </div>
-                                    <!-- end col -->
-                                </div>
-                                <!-- end row -->
-
-                            </div>
-                            <!-- container -->
-
-                        </div>
-
-                        <!-- end row of table content-->
-
-                    </div>
-                    <!-- container -->
-
+                            </div> <!-- end card body-->
+                        </div> <!-- end card -->
+                    </div><!-- end col-->
                 </div>
+                <!-- end row-->
+                <!-- end of the first table-->
 
-                <!-- end row of table content-->
-
-            </div>
-            <!-- container -->
-        </div>
-        <!-- content -->
-
-    </div>
-
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
-
-    </div>
-    <!-- END wrapper -->
-
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+    
     <!-- bundle -->
-       <!-- bundle -->
-       <script src="../../static/js/vendor.min.js"></script>
-       <script src="../../static/js/app.min.js"></script>
-   
-       <!-- third party js -->
-       <script src="../../static/js/vendor/jquery.dataTables.min.js"></script>
-       <script src="../../static/js/vendor/dataTables.bootstrap5.js"></script>
-       <script src="../../static/js/vendor/dataTables.responsive.min.js"></script>
-       <script src="../../static/js/vendor/responsive.bootstrap5.min.js"></script>
-       <script src="../../static/js/vendor/dataTables.buttons.min.js"></script>
-       <script src="../../static/js/vendor/buttons.bootstrap5.min.js"></script>
-       <script src="../../static/js/vendor/buttons.php5.min.js"></script>
-       <script src="../../static/js/vendor/buttons.flash.min.js"></script>
-       <script src="../../static/js/vendor/buttons.print.min.js"></script>
-       <script src="../../static/js/vendor/dataTables.keyTable.min.js"></script>
-       <script src="../../static/js/vendor/dataTables.select.min.js"></script>
-       <script src="../../static/js/vendor/apexcharts.min.js"></script>
-       <script src="../../static/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
-       <script src="../../static/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
-       <script src="../../static/js/vendor/dropzone.min.js"></script>
-       <script src="../../static/js/vendor/list.min.js"></script>
-       <!-- third party js ends -->
-   
-       <!-- demo app -->
-       <script src="../../static/js/pages/demo.datatable-init.js"></script>
-       <script src="../../static/js/pages/demo.toastr.js"></script>
-       <script src="../../static/js/pages/demo.datatable-init.js"></script>
-       <script src="../../static/js/pages/demo.toastr.js"></script>
-       <script src="../../static/js/pages/list.js"></script>
+    <script src="../../static/js/vendor.min.js"></script>
+    <script src="../../static/js/app.min.js"></script>
+
+    <!-- third party js -->
+    <script src="../../static/js/vendor/jquery.dataTables.min.js"></script>
+    <script src="../../static/js/vendor/dataTables.bootstrap5.js"></script>
+    <script src="../../static/js/vendor/dataTables.responsive.min.js"></script>
+    <script src="../../static/js/vendor/responsive.bootstrap5.min.js"></script>
+    <script src="../../static/js/vendor/dataTables.buttons.min.js"></script>
+    <script src="../../static/js/vendor/buttons.bootstrap5.min.js"></script>
+    <script src="../../static/js/vendor/buttons.flash.min.js"></script>
+    <script src="../../static/js/vendor/buttons.php5.min.js"></script>
+    <script src="../../static/js/vendor/buttons.html5.min.js"></script>
+    <script src="../../static/js/vendor/buttons.flash.min.js"></script>
+    <script src="../../static/js/vendor/buttons.print.min.js"></script>
+    <script src="../../static/js/vendor/dataTables.keyTable.min.js"></script>
+    <script src="../../static/js/vendor/dataTables.select.min.js"></script>
+    <script src="../../static/js/vendor/apexcharts.min.js"></script>
+    <script src="../../static/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="../../static/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="../../static/js/vendor/dropzone.min.js"></script>
+    <script src="../../static/js/vendor/list.min.js"></script>
+    <!-- third party js ends -->
+
+    <!-- demo app -->
+    <script src="../../static/js/pages/demo.datatable-init.js"></script>
+    <script src="../../static/js/pages/demo.toastr.js"></script>
+    <script src="../../static/js/pages/demo.datatable-init.js"></script>
+    <script src="../../static/js/pages/demo.toastr.js"></script>
+    <script src="../../static/js/pages/list.js"></script>
+    <!-- end demo js-->
+
+    <!-- Datatable Init js -->
+    <script src="assets/js/pages/demo.datatable-init.js"></script>
 </body>
 
 </html>
